@@ -1,0 +1,103 @@
+/* ZIMORA UNIQUE FONT SYSTEM */
+
+/* Primary Brand Font - Zimora Sans */
+@font-face {
+  font-family: 'Zimora Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('zimora-sans-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zimora Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('zimora-sans-medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zimora Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('zimora-sans-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zimora Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('zimora-sans-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zimora Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('zimora-sans-extrabold.woff2') format('woff2');
+}
+
+/* Secondary Brand Font - Zimora Tech */
+@font-face {
+  font-family: 'Zimora Tech';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('zimora-tech-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zimora Tech';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('zimora-tech-bold.woff2') format('woff2');
+}
+
+/* Accent Font - Zimora Display */
+@font-face {
+  font-family: 'Zimora Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('zimora-display-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zimora Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('zimora-display-bold.woff2') format('woff2');
+}
+
+/* Monospace Font - Zimora Code */
+@font-face {
+  font-family: 'Zimora Code';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('zimora-code-regular.woff2') format('woff2');
+}
+
+/* Fallback to Inter for missing weights */
+@font-face {
+  font-family: 'Zimora Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('inter-regular.woff2') format('woff2');
+}
+
+/* CSS Variables for Font System */
+:root {
+  --font-primary: 'Zimora Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Zimora Tech', 'Courier New', monospace;
+  --font-display: 'Zimora Display', Georgia, serif;
+  --font-code: 'Zimora Code', 'Fira Code', monospace;
+  --font-fallback: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

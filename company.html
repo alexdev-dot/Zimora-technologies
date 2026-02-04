@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company | Zimora Technologies</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon/favicon-z-bold.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon/favicon-z-bold.ico">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/company-style.css">
+  <link rel="stylesheet" href="assets/fonts/zimora-fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Loading Spinner -->
+<div class="loading-spinner" id="loadingSpinner">
+  <div class="spinner"></div>
+</div>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+  <div class="container">
+    <div class="top-header-left">
+      <span class="header-email">zimoratechnologies@gmail.com</span>
+      <span class="header-time" id="currentTime"></span>
+    </div>
+    <div class="top-header-right">
+      <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="logo-img">
+      </a>
+    </div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="company.html" class="active">Company</a>
+      <a href="#portfolio">Our Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="contact.html">Contact</a>
+      <button class="nav-quote-btn" onclick="window.location.href='contact.html'">Get a Quote</button>
+    </nav>
+    <i class="fa-solid fa-bars menu" onclick="toggleMenu()"></i>
+  </div>
+</header>
+
+<!-- COMPANY HERO -->
+<section class="company-hero">
+  <div class="company-hero-content">
+    <h1 class="company-hero-title">Building Tomorrow's Technology Today</h1>
+    <p class="company-hero-subtitle">We are a team of passionate innovators, engineers, and dreamers committed to transforming businesses through cutting-edge technology solutions.</p>
+    
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number">1+</div>
+        <div class="hero-stat-label">Years Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">5+</div>
+        <div class="hero-stat-label">Projects Delivered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">3+</div>
+        <div class="hero-stat-label">Team Members</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">2+</div>
+        <div class="hero-stat-label">Countries Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY STORY -->
+<section class="company-story">
+  <div class="story-container">
+    <div class="story-grid">
+      <div class="story-content">
+        <h2>Our Story</h2>
+        <p>Zimora Technologies was founded in January 2026 with a vision to bring innovative digital solutions to businesses in Kenya and beyond.</p>
+        <p>Starting as a one-person initiative, our journey began with a passion for web development and creating seamless online experiences. In just a short time, we have developed multiple full-stack websites, laying the foundation for what will become a trusted technology company.</p>
+        <p>At Zimora Technologies, we are committed to helping businesses grow through cutting-edge web solutions, creative designs, and reliable digital services. This is just the beginning of our story, and we are excited to continue expanding our impact in the tech world.</p>
+      </div>
+      <div class="story-image">
+        <img src="assets/images/Company.png" alt="Our Journey">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="team-section">
+  <div class="team-header">
+    <h2>Meet Our Leadership</h2>
+    <p>The visionaries and experts driving our innovation and success</p>
+  </div>
+  
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="team-member-image">
+        <img src="assets/images/CEO.png" alt="CEO">
+      </div>
+      <div class="team-member-info">
+        <h3 class="team-member-name">Alex Kariuki</h3>
+        <p class="team-member-role">Chief Executive Officer</p>
+        <p class="team-member-bio">Alex, founder and CEO of Zimora Technologies, is a passionate web developer creating innovative digital solutions. Since January 2026, he has led multiple full-stack projects, driving Zimora’s mission to help businesses grow through technology. Known for his creativity and leadership, Alex aims to make Zimora a leading tech force.</p>
+        <div class="team-member-social">
+          <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div class="team-member-image">
+        <img src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-762020.jpg&fm=jpg" alt="CTO">
+      </div>
+      <div class="team-member-info">
+        <h3 class="team-member-name">Dr. Sarah Chen</h3>
+        <p class="team-member-role">Chief Technology Officer</p>
+        <p class="team-member-bio">MIT PhD in Computer Science specializing in AI, cloud architecture, and quantum computing. Published author of 25+ research papers and patents in distributed systems and machine learning.</p>
+        <div class="team-member-social">
+          <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div class="team-member-image">
+        <img src="https://images.pexels.com/photos/837358/pexels-photo-837358.jpeg?cs=srgb&dl=pexels-christina-morillo-837358.jpg&fm=jpg" alt="COO">
+      </div>
+      <div class="team-member-info">
+        <h3 class="team-member-name">Marcus Rodriguez</h3>
+        <p class="team-member-role">Chief Operating Officer</p>
+        <p class="team-member-bio">Stanford MBA with 15+ years in operations excellence and client relationship management. Expert in scaling operations and ensuring world-class delivery across global markets.</p>
+        <div class="team-member-social">
+          <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES SECTION -->
+<section class="values-section">
+  <div class="values-header">
+    <h2>Our Core Values</h2>
+    <p>The principles that guide everything we do</p>
+  </div>
+  
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">
+        <i class="fa-solid fa-lightbulb"></i>
+      </div>
+      <h3 class="value-title">Innovation First</h3>
+      <p class="value-description">We relentlessly pursue breakthrough solutions, challenging conventional wisdom and pushing the boundaries of what's technologically possible.</p>
+    </div>
+    
+    <div class="value-card">
+      <div class="value-icon">
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <h3 class="value-title">Integrity Always</h3>
+      <p class="value-description">We operate with complete transparency and ethical excellence, building lasting relationships founded on trust and accountability.</p>
+    </div>
+    
+    <div class="value-card">
+      <div class="value-icon">
+        <i class="fa-solid fa-users"></i>
+      </div>
+      <h3 class="value-title">Collaborative Spirit</h3>
+      <p class="value-description">We believe diverse perspectives and collective genius drive extraordinary innovation, fostering partnerships that amplify our impact.</p>
+    </div>
+    
+    <div class="value-card">
+      <div class="value-icon">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+      <h3 class="value-title">Excellence Driven</h3>
+      <p class="value-description">We are obsessed with delivering exceptional quality in every endeavor, continuously raising our standards and exceeding expectations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Transform Your Business?</h2>
+    <p class="cta-description">Join 1000+ companies that have already transformed their operations with our innovative solutions.</p>
+    <div class="cta-buttons">
+      <button class="cta-btn cta-btn-primary" onclick="window.location.href='contact.html'">Start Your Journey</button>
+      <button class="cta-btn cta-btn-secondary" onclick="window.location.href='services.html'">Explore Solutions</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Company Info -->
+      <div class="footer-section">
+        <h3>Zimora Technologies</h3>
+        <p>We provide innovative digital solutions that help businesses grow and succeed in the modern digital landscape. From web development to digital marketing, we've got you covered.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="company.html">Company</a></li>
+          <li><a href="#portfolio">Our Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile App Development</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">Custom Solutions</a></li>
+          <li><a href="services.html">Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Subscription -->
+      <div class="footer-section">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for the latest tech insights, tips, and company updates delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <div class="newsletter-input-group">
+            <input type="email" 
+                   id="newsletterEmail" 
+                   placeholder="Enter your email" 
+                   required 
+                   aria-label="Email for newsletter">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="newsletter-message" id="newsletterMessage"></div>
+        </form>
+        <div class="newsletter-benefits">
+          <div class="benefit-item">
+            <i class="fa-solid fa-check-circle"></i>
+            <span>Weekly tech insights</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fa-solid fa-check-circle"></i>
+            <span>Exclusive offers</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fa-solid fa-check-circle"></i>
+            <span>No spam, unsubscribe anytime</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Zimora Technologies. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/company.js"></script>
+</body>
+</html>
