@@ -5,20 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Company | Zimora Technologies</title>
   
+<!-- Performance Optimization -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="//img.freepik.com">
+  
   <!-- Favicon -->
-  <link rel="icon" href="assets/favicon/favicon-z-bold.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="assets/favicon/favicon-z-bold.ico">
+  <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/company-style.css">
   <link rel="stylesheet" href="assets/fonts/zimora-fonts.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
 </head>
 <body>
 
 <!-- Loading Spinner -->
 <div class="loading-spinner" id="loadingSpinner">
-  <div class="spinner"></div>
+  <div class="spinner-container">
+    <div class="spinner">
+      <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="loading-logo">
+    </div>
+    <div class="loading-text">
+      Loading
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- TOP HEADER -->
@@ -30,7 +50,7 @@
     </div>
     <div class="top-header-right">
       <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-square-x-twitter"></i></a>
       <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
       <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
       <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
@@ -52,7 +72,7 @@
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
       <a href="company.html" class="active">Company</a>
-      <a href="#portfolio">Our Projects</a>
+      <a href="projects.html">Our Projects</a>
       <a href="#blog">Blog</a>
       <a href="contact.html">Contact</a>
       <button class="nav-quote-btn" onclick="window.location.href='contact.html'">Get a Quote</button>
@@ -69,20 +89,20 @@
     
     <div class="hero-stats">
       <div class="hero-stat">
+        <div class="hero-stat-number">5+</div>
+        <div class="hero-stat-label">Project Delivered</div>
+      </div>
+      <div class="hero-stat">
         <div class="hero-stat-number">1+</div>
         <div class="hero-stat-label">Years Experience</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-number">5+</div>
-        <div class="hero-stat-label">Projects Delivered</div>
-      </div>
-      <div class="hero-stat">
         <div class="hero-stat-number">3+</div>
-        <div class="hero-stat-label">Team Members</div>
+        <div class="hero-stat-label">Happy Clients</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-number">2+</div>
-        <div class="hero-stat-label">Countries Served</div>
+        <div class="hero-stat-number">24/7</div>
+        <div class="hero-stat-label">Client Support</div>
       </div>
     </div>
   </div>
@@ -99,7 +119,7 @@
         <p>At Zimora Technologies, we are committed to helping businesses grow through cutting-edge web solutions, creative designs, and reliable digital services. This is just the beginning of our story, and we are excited to continue expanding our impact in the tech world.</p>
       </div>
       <div class="story-image">
-        <img src="assets/images/Company.png" alt="Our Journey">
+        <img src="assets/images/Company.jpg" alt="Our Journey">
       </div>
     </div>
   </div>
@@ -119,41 +139,11 @@
       </div>
       <div class="team-member-info">
         <h3 class="team-member-name">Alex Kariuki</h3>
-        <p class="team-member-role">Chief Executive Officer</p>
-        <p class="team-member-bio">Alex, founder and CEO of Zimora Technologies, is a passionate web developer creating innovative digital solutions. Since January 2026, he has led multiple full-stack projects, driving Zimora’s mission to help businesses grow through technology. Known for his creativity and leadership, Alex aims to make Zimora a leading tech force.</p>
+        <p class="team-member-role">Chief Executive Officer & Founder</p>
+        <p class="team-member-bio">Alex, founder and CEO of Zimora Technologies, is a passionate web developer creating innovative digital solutions. Since January 2026, he has led multiple full-stack projects, driving Zimora's mission to help businesses grow through technology. Known for his creativity and leadership, Alex aims to make Zimora a leading tech force.</p>
         <div class="team-member-social">
           <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="team-member">
-      <div class="team-member-image">
-        <img src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-762020.jpg&fm=jpg" alt="CTO">
-      </div>
-      <div class="team-member-info">
-        <h3 class="team-member-name">Dr. Sarah Chen</h3>
-        <p class="team-member-role">Chief Technology Officer</p>
-        <p class="team-member-bio">MIT PhD in Computer Science specializing in AI, cloud architecture, and quantum computing. Published author of 25+ research papers and patents in distributed systems and machine learning.</p>
-        <div class="team-member-social">
-          <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="team-member">
-      <div class="team-member-image">
-        <img src="https://images.pexels.com/photos/837358/pexels-photo-837358.jpeg?cs=srgb&dl=pexels-christina-morillo-837358.jpg&fm=jpg" alt="COO">
-      </div>
-      <div class="team-member-info">
-        <h3 class="team-member-name">Marcus Rodriguez</h3>
-        <p class="team-member-role">Chief Operating Officer</p>
-        <p class="team-member-bio">Stanford MBA with 15+ years in operations excellence and client relationship management. Expert in scaling operations and ensuring world-class delivery across global markets.</p>
-        <div class="team-member-social">
-          <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-square-x-twitter"></i></a>
         </div>
       </div>
     </div>
@@ -220,11 +210,13 @@
     <div class="footer-content">
       <!-- Company Info -->
       <div class="footer-section">
-        <h3>Zimora Technologies</h3>
+        <div class="footer-logo">
+          <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="footer-logo-img">
+        </div>
         <p>We provide innovative digital solutions that help businesses grow and succeed in the modern digital landscape. From web development to digital marketing, we've got you covered.</p>
         <div class="footer-social">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-square-x-twitter"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -291,7 +283,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2024 Zimora Technologies. All rights reserved.</p>
+      <p>Copyright &copy; 2026 Zimora Technologies. All rights reserved.</p>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-of-service.html">Terms of Service</a>

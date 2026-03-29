@@ -2,10 +2,20 @@
 window.addEventListener('load', () => {
   const loadingSpinner = document.getElementById('loadingSpinner');
   if (loadingSpinner) {
+    // Enhanced loading experience with minimum display time
+    const minDisplayTime = 1500; // Minimum 1.5 seconds for better UX
+    const startTime = Date.now();
+    
+    // Add fade-out animation
     loadingSpinner.classList.add('fade-out');
+    
+    // Calculate remaining time to ensure minimum display
+    const elapsedTime = Date.now() - startTime;
+    const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+    
     setTimeout(() => {
       loadingSpinner.style.display = 'none';
-    }, 500);
+    }, Math.max(500, remainingTime)); // At least 500ms for fade animation
   }
   
   // Initialize page transitions
@@ -14,6 +24,94 @@ window.addEventListener('load', () => {
       element.style.opacity = '1';
       element.style.transform = 'translateY(0)';
     }, index * 100);
+  });
+});
+
+// Enhanced loading spinner for page transitions
+function showLoadingSpinner() {
+  const loadingSpinner = document.getElementById('loadingSpinner');
+  if (loadingSpinner) {
+    loadingSpinner.style.display = 'flex';
+    loadingSpinner.classList.remove('fade-out');
+    
+    // Reset animations
+    const spinner = loadingSpinner.querySelector('.spinner');
+    const logo = loadingSpinner.querySelector('.loading-logo');
+    const dots = loadingSpinner.querySelectorAll('.loading-dots span');
+    
+    if (spinner) {
+      spinner.style.animation = 'none';
+      setTimeout(() => {
+        spinner.style.animation = '';
+      }, 10);
+    }
+    
+    if (logo) {
+      logo.style.animation = 'none';
+      setTimeout(() => {
+        logo.style.animation = '';
+      }, 10);
+    }
+    
+    dots.forEach((dot, index) => {
+      dot.style.animation = 'none';
+      setTimeout(() => {
+        dot.style.animation = '';
+      }, 10 + index * 50);
+    });
+  }
+}
+
+// Enhanced page transition with loading spinner
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle navigation link clicks with enhanced transitions
+  const navLinks = document.querySelectorAll('nav a[href], .footer a[href]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Skip external links, anchors, and mailto links
+      if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+        return;
+      }
+      
+      e.preventDefault();
+      
+      // Show loading spinner
+      showLoadingSpinner();
+      
+      // Fade out current page
+      document.body.style.transition = 'opacity 0.3s ease-out';
+      document.body.style.opacity = '0';
+      
+      // Navigate to new page after fade out
+      setTimeout(() => {
+        window.location.href = href;
+      }, 300);
+    });
+  });
+
+  // Handle button clicks with transitions
+  const buttons = document.querySelectorAll('button[onclick]');
+  buttons.forEach(button => {
+    const onclick = button.getAttribute('onclick');
+    if (onclick && onclick.includes('window.location.href')) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Show loading spinner
+        showLoadingSpinner();
+        
+        // Fade out current page
+        document.body.style.transition = 'opacity 0.3s ease-out';
+        document.body.style.opacity = '0';
+        
+        // Navigate after fade out
+        setTimeout(() => {
+          eval(onclick);
+        }, 300);
+      });
+    }
   });
 });
 
@@ -112,6 +210,24 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 60000);
 
+// Auto-update copyright year
+function updateCopyrightYear() {
+  const currentYear = new Date().getFullYear();
+  const copyrightElements = document.querySelectorAll('p');
+  
+  copyrightElements.forEach(element => {
+    const text = element.textContent;
+    if (text.includes('Copyright') && text.includes('Zimora Technologies')) {
+      // Replace any year with the current year
+      const updatedText = text.replace(/Copyright\s*&copy;\s*\d{4}/i, `Copyright &copy; ${currentYear}`);
+      element.textContent = updatedText;
+    }
+  });
+}
+
+// Update copyright on page load
+document.addEventListener('DOMContentLoaded', updateCopyrightYear);
+
 // Navbar scroll effect
 let lastScrollTop = 0;
 const navbar = document.querySelector('.navbar');
@@ -169,25 +285,28 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Smooth Page Transitions
+// Enhanced page transition with loading spinner
 document.addEventListener('DOMContentLoaded', function() {
   // Fade in page content
   setTimeout(() => {
     document.body.style.opacity = '1';
   }, 100);
 
-  // Handle navigation link clicks with smooth transitions
-  const navLinks = document.querySelectorAll('nav a[href]');
+  // Handle navigation link clicks with enhanced transitions
+  const navLinks = document.querySelectorAll('nav a[href], .footer a[href]');
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       
-      // Skip external links and anchors
-      if (href.startsWith('http') || href.startsWith('#')) {
+      // Skip external links, anchors, and mailto links
+      if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
         return;
       }
       
       e.preventDefault();
+      
+      // Show loading spinner
+      showLoadingSpinner();
       
       // Fade out current page
       document.body.style.transition = 'opacity 0.3s ease-out';
@@ -207,6 +326,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (onclick && onclick.includes('window.location.href')) {
       button.addEventListener('click', function(e) {
         e.preventDefault();
+        
+        // Show loading spinner
+        showLoadingSpinner();
         
         // Fade out current page
         document.body.style.transition = 'opacity 0.3s ease-out';

@@ -23,7 +23,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize print functionality
     initializePrintFunctionality();
+    
+    // Update copyright year
+    updateCopyrightYear();
 });
+
+// Auto-update copyright year
+function updateCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    const copyrightElements = document.querySelectorAll('p');
+    
+    copyrightElements.forEach(element => {
+        const text = element.textContent;
+        if (text.includes('Copyright') && text.includes('Zimora Technologies')) {
+            // Replace any year with the current year
+            const updatedText = text.replace(/Copyright\s*&copy;\s*\d{4}/i, `Copyright &copy; ${currentYear}`);
+            element.textContent = updatedText;
+        }
+    });
+}
 
 // Table of Contents
 function initializeTableOfContents() {

@@ -5,16 +5,16 @@
 /* CSS Variables */
 :root {
   --primary-color: #ff4d00;
-  --primary-dark: #e64400;
-  --primary-light: #ff6622;
-  --dark-bg: #0b0f1c;
-  --dark-secondary: #1a1f2e;
+  --primary-dark: #e64300;
+  --primary-light: #ff6633;
+  --dark-bg: #0f172a;
+  --dark-secondary: #1e293b;
   --text-primary: #ffffff;
-  --text-secondary: #b8c1ec;
-  --text-muted: #6b7280;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
   --card-bg: #ffffff;
   --card-hover: #f8fafc;
-  --border-color: #e5e7eb;
+  --border-color: #e2e8f0;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -55,25 +55,116 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.8s ease-out;
+  overflow: hidden;
+}
+
+.loading-spinner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 77, 0, 0.1), transparent);
+  animation: loadingShimmer 2s ease-in-out infinite;
+}
+
+@keyframes loadingShimmer {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
 }
 
 .loading-spinner.fade-out {
   opacity: 0;
+  pointer-events: none;
+}
+
+.spinner-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.loading-logo {
+  width: 120px;
+  height: auto;
+  animation: logoPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 8px 30px rgba(255, 77, 0, 0.4));
+  position: relative;
+  z-index: 2;
+}
+
+.loading-logo::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 77, 0, 0.1) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { 
+    transform: scale(1) translateY(0px);
+    filter: drop-shadow(0 8px 30px rgba(255, 77, 0, 0.4));
+  }
+  50% { 
+    transform: scale(1.05) translateY(-5px);
+    filter: drop-shadow(0 12px 40px rgba(255, 77, 0, 0.6));
+  }
+}
+
+@keyframes logoGlow {
+  0%, 100% { 
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
 }
 
 .spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(255, 77, 0, 0.1);
-  border-top: 4px solid var(--primary-color);
+  width: 160px;
+  height: 160px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner::before,
+.spinner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  border: 3px solid transparent;
+  border-top-color: var(--primary-color);
+  animation: spin 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+.spinner::after {
+  border-top-color: var(--primary-light);
+  animation-delay: 0.3s;
+  animation-direction: reverse;
+  border-width: 2px;
 }
 
 @keyframes spin {
@@ -143,19 +234,33 @@ body {
   align-items: center;
 }
 
-.logo-img {
-  height: 50px;
-  transition: transform var(--transition-base);
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  height: 75px;
 }
 
-.logo-img:hover {
-  transform: scale(1.05);
+.logo-img {
+  height: 100px;
+  width: auto;
+  transition: var(--transition-base);
+  position: absolute;
+  top: 50%;
+  left: -90px;
+  transform: translateY(-50%);
+}
+
+.logo:hover .logo-img {
+  transform: translateY(-50%) scale(1.05);
 }
 
 nav {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
+  margin-left: 50px;
 }
 
 nav a {
@@ -939,6 +1044,19 @@ nav a.active::after {
 @keyframes lineShine {
   0%, 100% { left: -100%; }
   50% { left: 100%; }
+}
+
+/* Footer Logo Styling */
+.footer-logo-img {
+  max-height: 100px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 77, 0, 0.3));
+  transform: scale(1.05);
 }
 
 /* Responsive Styles */
