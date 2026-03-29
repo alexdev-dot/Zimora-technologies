@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeMobileMenu();
   initializeScrollReveal();
   initializeCounters();
-  initializeLoadingSpinner();
 });
 
 // Time display function
@@ -125,20 +124,6 @@ function initializeCounters() {
   });
 }
 
-// Loading spinner
-function initializeLoadingSpinner() {
-  window.addEventListener('load', function() {
-    const spinner = document.getElementById('loadingSpinner');
-    if (spinner) {
-      setTimeout(() => {
-        spinner.classList.add('fade-out');
-        setTimeout(() => {
-          spinner.style.display = 'none';
-        }, 500);
-      }, 1000);
-    }
-  });
-}
 
 // Smooth scroll for anchor links
 document.addEventListener('click', function(e) {

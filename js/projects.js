@@ -27,16 +27,8 @@ function initializeFilters() {
           card.classList.remove('hidden');
           // Re-animate card
           card.style.animation = 'none';
-          setTimeout(() => {
-            card.style.animation = '';
-          }, 10);
         } else if (cardCategory === filter) {
           card.classList.remove('hidden');
-          // Re-animate card
-          card.style.animation = 'none';
-          setTimeout(() => {
-            card.style.animation = '';
-          }, 10);
         } else {
           card.classList.add('hidden');
         }
@@ -45,10 +37,9 @@ function initializeFilters() {
   });
 }
 
-// Animation initialization
+// Animation functionality
 function initializeAnimations() {
-  // Reveal animations on scroll
-  const reveals = document.querySelectorAll('.project-card');
+  const reveals = document.querySelectorAll('.reveal');
   
   const observerOptions = {
     threshold: 0.1,

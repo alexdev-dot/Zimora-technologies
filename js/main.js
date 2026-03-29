@@ -1,23 +1,5 @@
-// Loading spinner and page initialization
+// Page initialization
 window.addEventListener('load', () => {
-  const loadingSpinner = document.getElementById('loadingSpinner');
-  if (loadingSpinner) {
-    // Enhanced loading experience with minimum display time
-    const minDisplayTime = 1500; // Minimum 1.5 seconds for better UX
-    const startTime = Date.now();
-    
-    // Add fade-out animation
-    loadingSpinner.classList.add('fade-out');
-    
-    // Calculate remaining time to ensure minimum display
-    const elapsedTime = Date.now() - startTime;
-    const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
-    
-    setTimeout(() => {
-      loadingSpinner.style.display = 'none';
-    }, Math.max(500, remainingTime)); // At least 500ms for fade animation
-  }
-  
   // Initialize page transitions
   document.querySelectorAll('.page-transition').forEach((element, index) => {
     setTimeout(() => {
@@ -27,42 +9,8 @@ window.addEventListener('load', () => {
   });
 });
 
-// Enhanced loading spinner for page transitions
-function showLoadingSpinner() {
-  const loadingSpinner = document.getElementById('loadingSpinner');
-  if (loadingSpinner) {
-    loadingSpinner.style.display = 'flex';
-    loadingSpinner.classList.remove('fade-out');
-    
-    // Reset animations
-    const spinner = loadingSpinner.querySelector('.spinner');
-    const logo = loadingSpinner.querySelector('.loading-logo');
-    const dots = loadingSpinner.querySelectorAll('.loading-dots span');
-    
-    if (spinner) {
-      spinner.style.animation = 'none';
-      setTimeout(() => {
-        spinner.style.animation = '';
-      }, 10);
-    }
-    
-    if (logo) {
-      logo.style.animation = 'none';
-      setTimeout(() => {
-        logo.style.animation = '';
-      }, 10);
-    }
-    
-    dots.forEach((dot, index) => {
-      dot.style.animation = 'none';
-      setTimeout(() => {
-        dot.style.animation = '';
-      }, 10 + index * 50);
-    });
-  }
-}
 
-// Enhanced page transition with loading spinner
+// Enhanced page transition
 document.addEventListener('DOMContentLoaded', function() {
   // Handle navigation link clicks with enhanced transitions
   const navLinks = document.querySelectorAll('nav a[href], .footer a[href]');
@@ -76,9 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       e.preventDefault();
-      
-      // Show loading spinner
-      showLoadingSpinner();
       
       // Fade out current page
       document.body.style.transition = 'opacity 0.3s ease-out';
@@ -98,9 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (onclick && onclick.includes('window.location.href')) {
       button.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        // Show loading spinner
-        showLoadingSpinner();
         
         // Fade out current page
         document.body.style.transition = 'opacity 0.3s ease-out';
@@ -285,7 +227,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Enhanced page transition with loading spinner
+// Enhanced page transition
 document.addEventListener('DOMContentLoaded', function() {
   // Fade in page content
   setTimeout(() => {
@@ -305,9 +247,6 @@ document.addEventListener('DOMContentLoaded', function() {
       
       e.preventDefault();
       
-      // Show loading spinner
-      showLoadingSpinner();
-      
       // Fade out current page
       document.body.style.transition = 'opacity 0.3s ease-out';
       document.body.style.opacity = '0';
@@ -326,9 +265,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (onclick && onclick.includes('window.location.href')) {
       button.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        // Show loading spinner
-        showLoadingSpinner();
         
         // Fade out current page
         document.body.style.transition = 'opacity 0.3s ease-out';
@@ -423,7 +359,7 @@ function subscribeToNewsletter(email) {
   const originalContent = newsletterBtn.innerHTML;
   
   // Show loading state
-  newsletterBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+  newsletterBtn.innerHTML = 'Subscribing...';
   newsletterBtn.disabled = true;
   
   // Simulate API call (in production, this would be a real API call)

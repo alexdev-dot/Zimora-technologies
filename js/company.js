@@ -310,21 +310,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
-  // Add loading spinner removal
-  const loadingSpinner = document.getElementById('loadingSpinner');
-  if (loadingSpinner) {
-    setTimeout(() => {
-      loadingSpinner.style.opacity = '0';
-      setTimeout(() => {
-        loadingSpinner.style.display = 'none';
-      }, 500);
-    }, 1000);
-  }
 });
 
 // Handle page visibility changes
-document.addEventListener('visibilitychange', function() {
+  document.addEventListener('visibilitychange', function() {
   if (document.hidden) {
     // Pause animations when page is hidden
     document.querySelectorAll('.animate-in').forEach(element => {

@@ -50,16 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Loading spinner
-window.addEventListener('load', () => {
-  const spinner = document.getElementById('loadingSpinner');
-  if (spinner) {
-    spinner.classList.add('fade-out');
-    setTimeout(() => {
-      spinner.style.display = 'none';
-    }, 500);
-  }
-});
 
 // Live time display
 function updateTime() {
@@ -173,7 +163,7 @@ if (contactForm) {
     // Show loading state
     const submitBtn = this.querySelector('.contact-submit-btn');
     const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    submitBtn.innerHTML = 'Sending...';
     submitBtn.disabled = true;
     
     // Simulate form submission (replace with actual API call)

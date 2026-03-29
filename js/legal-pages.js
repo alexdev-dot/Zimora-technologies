@@ -1,14 +1,5 @@
 // Legal Pages JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize loading spinner
-    const loadingSpinner = document.getElementById('loadingSpinner');
-    if (loadingSpinner) {
-        loadingSpinner.classList.add('fade-out');
-        setTimeout(() => {
-            loadingSpinner.style.display = 'none';
-        }, 500);
-    }
-
     // Initialize table of contents
     initializeTableOfContents();
     
