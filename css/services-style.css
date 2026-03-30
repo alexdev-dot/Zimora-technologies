@@ -1508,3 +1508,334 @@ html {
   filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 77, 0, 0.3));
   transform: scale(1.05);
 }
+
+/* ========================================
+   TECHNOLOGIES SECTION STYLES
+   ======================================== */
+
+.technologies-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.technologies-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 77, 0, 0.3), transparent);
+  animation: techShimmer 8s ease-in-out infinite;
+}
+
+@keyframes techShimmer {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+}
+
+.technologies-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(255, 77, 0, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 77, 0, 0.01) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.technologies-section .container {
+  display: block;
+  text-align: center;
+  flex-direction: column;
+}
+
+.technologies-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+}
+
+.technologies-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--dark-bg);
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: techTitleSlideIn 1s ease-out;
+}
+
+@keyframes techTitleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.technologies-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(255, 77, 0, 0.3);
+  animation: techUnderlineGlow 3s ease-in-out infinite;
+}
+
+@keyframes techUnderlineGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 77, 0, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(255, 77, 0, 0.5); }
+}
+
+.technologies-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 30px auto 0;
+  line-height: 1.6;
+  font-weight: 500;
+  animation: techDescriptionFadeIn 1.2s ease-out 0.3s both;
+}
+
+@keyframes techDescriptionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  clear: both;
+}
+
+.tech-item {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: techItemFadeIn 1s ease-out both;
+}
+
+.tech-item:nth-child(1) { animation-delay: 0.05s; }
+.tech-item:nth-child(2) { animation-delay: 0.1s; }
+.tech-item:nth-child(3) { animation-delay: 0.15s; }
+.tech-item:nth-child(4) { animation-delay: 0.2s; }
+.tech-item:nth-child(5) { animation-delay: 0.25s; }
+.tech-item:nth-child(6) { animation-delay: 0.3s; }
+.tech-item:nth-child(7) { animation-delay: 0.35s; }
+.tech-item:nth-child(8) { animation-delay: 0.4s; }
+.tech-item:nth-child(9) { animation-delay: 0.45s; }
+.tech-item:nth-child(10) { animation-delay: 0.5s; }
+.tech-item:nth-child(11) { animation-delay: 0.55s; }
+.tech-item:nth-child(12) { animation-delay: 0.6s; }
+.tech-item:nth-child(13) { animation-delay: 0.65s; }
+.tech-item:nth-child(14) { animation-delay: 0.7s; }
+.tech-item:nth-child(15) { animation-delay: 0.75s; }
+.tech-item:nth-child(16) { animation-delay: 0.8s; }
+
+@keyframes techItemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tech-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 77, 0, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.tech-item:hover::before {
+  transform: scaleX(1);
+}
+
+.tech-item:hover::after {
+  opacity: 1;
+}
+
+.tech-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 77, 0, 0.3);
+}
+
+.tech-item i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tech-item:hover i {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 5px 15px rgba(255, 77, 0, 0.3));
+}
+
+.tech-item span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.tech-item:hover span {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Technologies responsive styles */
+@media (max-width: 768px) {
+  .technologies-section {
+    padding: 60px 0;
+  }
+  
+  .technologies-header {
+    margin-bottom: 40px;
+  }
+  
+  .technologies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .tech-item {
+    padding: 25px 15px;
+  }
+  
+  .tech-item i {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .tech-item span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .technologies-section {
+    padding: 50px 0;
+  }
+  
+  .technologies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .tech-item {
+    padding: 20px 10px;
+  }
+  
+  .tech-item i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .tech-item span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed !important;           /* Ensure fixed positioning */
+    bottom: 20px !important;              /* distance from bottom */
+    right: 20px !important;               /* distance from right */
+    z-index: 99999 !important;            /* very high so it stays on top of everything */
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    background-color: #25D366 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}

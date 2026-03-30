@@ -1657,3 +1657,30 @@ nav a.active::before {
   filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 77, 0, 0.3));
   transform: scale(1.05);
 }
+
+
+.whatsapp-float {
+    position: fixed;           /* This is the key! */
+    bottom: 20px;              /* distance from bottom */
+    right: 20px;               /* distance from right */
+    z-index: 10000;            /* very high so it stays on top of footer */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
