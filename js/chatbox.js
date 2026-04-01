@@ -35,10 +35,16 @@ class Chatbox {
       'who is the ceo': 'Our CEO is Alex Dev, who leads Zimora Technologies with a vision for innovation and excellence in digital solutions. Under Alex\'s leadership, we continue to deliver cutting-edge technology solutions that help businesses thrive in the digital age.',
       
       // Services
-      'services': 'We offer Web Development, Mobile & Web App Development, and Digital Marketing services. Each service is tailored to meet your specific business needs.',
-      'web development': 'We create business and corporate websites, company portfolio websites, e-commerce platforms, custom web systems, responsive and mobile-friendly designs, and website optimization.',
-      'app development': 'Our mobile and web app development includes web applications, mobile-friendly systems, admin and management panels, API development and integrations, custom software solutions, and system maintenance.',
-      'digital marketing': 'Our digital marketing services cover SEO, social media marketing strategies, brand positioning and online presence, content marketing and planning, website traffic growth strategies, and performance analysis.',
+      'services': 'We offer comprehensive IT services including Web Development, Mobile & Web App Development, Digital Marketing, Hosting & Domain Setup, E-commerce Solutions, and Maintenance & Support. Each service is tailored to meet your specific business needs.',
+      'web development': 'We create business and corporate websites, company portfolio websites, real estate platforms, custom web systems, responsive and mobile-friendly designs, and website optimization and performance improvements.',
+      'app development': 'Our mobile and web app development includes web applications, mobile-friendly systems, admin and management panels, API development and integrations, custom software solutions, and system maintenance and upgrades.',
+      'digital marketing': 'Our digital marketing services cover search engine optimization (SEO), social media marketing strategies, brand positioning and online presence, content marketing and planning, website traffic growth strategies, and performance analysis and reporting.',
+      'hosting': 'Our hosting and domain setup services include domain registration support, website hosting setup, SSL installation, email hosting (business emails), and server configuration & deployment.',
+      'domain': 'Our hosting and domain setup services include domain registration support, website hosting setup, SSL installation, email hosting (business emails), and server configuration & deployment.',
+      'e-commerce': 'Our e-commerce solutions include custom e-commerce development, payment gateway integration, product catalog management, shopping cart & checkout optimization, and security and compliance.',
+      'ecommerce': 'Our e-commerce solutions include custom e-commerce development, payment gateway integration, product catalog management, shopping cart & checkout optimization, and security and compliance.',
+      'maintenance': 'Our maintenance and support services include regular website updates, bug fixing and improvements, performance monitoring, content updates, and 24/7 technical support.',
+      'support': 'Our maintenance and support services include regular website updates, bug fixing and improvements, performance monitoring, content updates, and 24/7 technical support.',
       
       // Technologies
       'technologies': 'We work with modern technologies including React, Angular, Vue.js, Node.js, Python, JavaScript, HTML5, CSS3, WordPress, PHP, MySQL, Git, Docker, AWS, Google Cloud, and React Native.',
@@ -627,7 +633,7 @@ class Chatbox {
     
     // Check for service-related queries
     if (message.includes('what') && message.includes('service')) {
-      return 'We offer three main services: Web Development (websites and web systems), Mobile & Web App Development (applications and software), and Digital Marketing (SEO, social media, and online growth strategies). Which service interests you most?';
+      return 'We offer six main services: Web Development (business websites, real estate platforms, custom web systems), Mobile & Web App Development (applications, admin panels, APIs), Digital Marketing (SEO, social media, brand positioning), Hosting & Domain Setup (domain registration, SSL, server configuration), E-commerce Solutions (custom development, payment integration), and Maintenance & Support (24/7 technical support, updates). Which service interests you most?';
     }
     
     // Check for pricing queries
@@ -637,16 +643,16 @@ class Chatbox {
     
     // Check for project-related queries
     if (message.includes('project') || message.includes('portfolio') || message.includes('work')) {
-      return 'We\'ve worked on various projects including business websites, e-commerce platforms, mobile applications, and digital marketing campaigns. You can view some of our featured projects on the Our Projects page. What type of project are you interested in?';
+      return 'We\'ve worked on various projects including business websites, real estate platforms, e-commerce solutions, mobile applications, web applications, and digital marketing campaigns. You can view some of our featured projects on the Our Projects page. What type of project are you interested in?';
     }
     
     // Check for help/support queries
     if (message.includes('help') || message.includes('support') || message.includes('assist')) {
-      return 'I\'m here to help! I can answer questions about our services, company information, contact details, technologies we use, and much more. What specific information would you like to know?';
+      return 'I\'m here to help! I can answer questions about our services (web development, app development, digital marketing, hosting, e-commerce solutions, maintenance), company details, contact information, technologies we use, and much more. What specific information would you like to know?';
     }
     
     // Default response
-    return 'I\'m not sure I understand. I can help you with information about our services (web development, app development, digital marketing), company details, contact information, and technologies we use. Could you please rephrase your question or ask about something specific?';
+    return 'I\'m not sure I understand. I can help you with information about our services (web development, app development, digital marketing, hosting, e-commerce solutions, maintenance), company details, contact information, and technologies we use. Could you please rephrase your question or ask about something specific?';
   }
 }
 

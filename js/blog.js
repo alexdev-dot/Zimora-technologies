@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryFilters = document.querySelectorAll('.category-filter');
     const blogPosts = document.querySelectorAll('.blog-post');
     
+    // Handle navigation from home page to specific blog post
+    handleTargetBlogScroll();
+    
+    // Add IDs to blog posts for navigation
+    addBlogPostIds();
+    
     // Calculate and update category counts
     function updateCategoryCounts() {
         const categories = {};
@@ -31,6 +37,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 filter.innerHTML = `${categoryName} <span class="category-count">(${count})</span>`;
             }
         });
+    }
+    
+    // Add IDs to blog posts for navigation
+    function addBlogPostIds() {
+        const blogPosts = document.querySelectorAll('.blog-post');
+        blogPosts.forEach((post, index) => {
+            // Add ID based on index + 1 (matching the blog data)
+            post.id = `blog-${index + 1}`;
+        });
+    }
+    
+    // Handle scrolling to specific blog post from home page
+    function handleTargetBlogScroll() {
+        const targetBlog = sessionStorage.getItem('targetBlog');
+        
+        if (targetBlog) {
+            // Clear the stored target
+            sessionStorage.removeItem('targetBlog');
+            
+            // Wait for page to fully load, then scroll to target
+            setTimeout(() => {
+                const targetElement = document.getElementById(targetBlog);
+                
+                if (targetElement) {
+                    // Scroll to the blog post
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    
+                    // Highlight the blog post
+                    highlightBlogPost(targetElement);
+                }
+            }, 500);
+        }
+    }
+    
+    // Highlight the target blog post
+    function highlightBlogPost(element) {
+        // Add highlight class
+        element.classList.add('blog-post-highlighted');
+        
+        // Remove highlight after 3 seconds
+        setTimeout(() => {
+            element.classList.remove('blog-post-highlighted');
+        }, 3000);
     }
     
     // Initialize filter functionality
@@ -183,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeBlogFilter();
     initializeLoadMore();
     
-    // Add CSS for animations
+    // Add CSS for animations and highlight effect
     const style = document.createElement('style');
     style.textContent = `
         .blog-post {
@@ -210,6 +262,25 @@ document.addEventListener('DOMContentLoaded', function() {
         
         .no-posts-message {
             animation: fadeInUp 0.5s ease-out;
+        }
+        
+        .blog-post-highlighted {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%) !important;
+            border: 2px solid var(--primary-color, #ff4d00) !important;
+            box-shadow: 0 10px 30px rgba(255, 77, 0, 0.2) !important;
+            animation: pulseHighlight 2s ease-in-out;
+        }
+        
+        @keyframes pulseHighlight {
+            0% {
+                box-shadow: 0 10px 30px rgba(255, 77, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 15px 40px rgba(255, 77, 0, 0.4);
+            }
+            100% {
+                box-shadow: 0 10px 30px rgba(255, 77, 0, 0.2);
+            }
         }
     `;
     document.head.appendChild(style);
