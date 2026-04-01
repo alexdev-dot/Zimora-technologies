@@ -5,6 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Projects - Zimora Technologies | Portfolio</title>
 
+<!-- SEO Meta Tags -->
+<meta name="description" content="Explore our portfolio of successful IT projects at Zimora Technologies. View our web development, mobile app, and digital transformation projects delivered to clients across Kenya and beyond.">
+<meta name="keywords" content="Zimora Technologies projects, web development portfolio, mobile app projects, digital transformation case studies, IT projects Kenya, software development portfolio, client success stories">
+<meta name="author" content="Zimora Technologies">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="language" content="English">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Our Projects - Zimora Technologies | Portfolio">
+<meta property="og:description" content="Explore our portfolio of successful IT projects at Zimora Technologies. View our web development, mobile app, and digital transformation projects delivered to clients.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimoratech.co.ke/projects.html">
+<meta property="og:image" content="https://zimoratech.co.ke/assets/images/projects-og-image.jpg">
+<meta property="og:site_name" content="Zimora Technologies">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Projects - Zimora Technologies | Portfolio">
+<meta name="twitter:description" content="Explore our portfolio of successful IT projects at Zimora Technologies.">
+<meta name="twitter:image" content="https://zimoratech.co.ke/assets/images/projects-twitter-card.jpg">
+<meta name="twitter:site" content="@ZimoraTech">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://zimoratech.co.ke/projects.html">
+
+<!-- Additional SEO Tags -->
+<meta name="theme-color" content="#ff4d00">
+<meta name="msapplication-TileColor" content="#ff4d00">
+<meta name="application-name" content="Zimora Technologies Projects">
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Zimora Technologies Projects",
+  "description": "Explore our portfolio of successful IT projects at Zimora Technologies. View our web development, mobile app, and digital transformation projects",
+  "url": "https://zimoratech.co.ke/projects.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Zimora Technologies",
+    "url": "https://zimoratech.co.ke/"
+  },
+  "inLanguage": "en-US"
+}
+</script>
+
 <!-- Performance Optimization -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +65,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 
 <link rel="stylesheet" href="css/projects-style.css">
+<link rel="stylesheet" href="css/chatbox.css">
 <link rel="stylesheet" href="fonts/zimora-fonts.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
@@ -32,12 +81,12 @@
       <span class="header-time" id="currentTime"></span>
     </div>
     <div class="top-header-right">
-      <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-square-x-twitter"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://facebook.com/zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://twitter.com/ZimoraTech" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <a href="https://linkedin.com/company/zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://instagram.com/zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://tiktok.com/@zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://youtube.com/@zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
     </div>
   </div>
 </div>
@@ -47,7 +96,7 @@
   <div class="container">
     <div class="logo">
       <a href="index.html">
-        <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="logo-img">
+        <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="logo-img" loading="lazy">
       </a>
     </div>
     <nav id="nav">
@@ -56,7 +105,7 @@
       <a href="services.html">Services</a>
       <a href="company.html">Company</a>
       <a href="projects.html" class="active">Our Projects</a>
-      <a href="#blog">Blog</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
       <button class="nav-quote-btn" onclick="window.location.href='contact.html'">Get a Quote</button>
     </nav>
@@ -108,7 +157,7 @@
       <!-- Web Development Project -->
       <div class="project-card" data-category="web">
         <div class="project-image">
-          <img src="assets/project-images/Groomers.png" alt="Groomers barber spa website">
+          <img src="assets/project-images/Groomers.png" alt="Groomers barber spa website" loading="lazy">
           <div class="project-overlay">
             <div class="project-actions">
               <a href="https://alexdev-dot.github.io/Groomers/" class="visit-site">
@@ -136,7 +185,7 @@
       <!-- Mobile App Project -->
       <div class="project-card" data-category="mobile">
         <div class="project-image">
-          <img src="assets/project-images/Fintech Application.png" alt="Fitness Tracking App">
+          <img src="assets/project-images/Fintech Application.png" alt="Fitness Tracking App" loading="lazy">
           <div class="project-overlay">
             <div class="project-actions">
               <a href="#" class="visit-site">
@@ -165,7 +214,7 @@
       <!-- Real estate Project -->
       <div class="project-card" data-category="real-estate">
         <div class="project-image">
-          <img src="assets/project-images/Horizon Estate.png" alt="Horizon estate">
+          <img src="assets/project-images/Horizon Estate.png" alt="Horizon estate" loading="lazy">
           <div class="project-overlay">
             <div class="project-actions">
               <a href="#" class="visit-site">
@@ -194,7 +243,7 @@
       <!-- E-Commerce Project -->
       <div class="project-card" data-category="ecommerce">
         <div class="project-image">
-          <img src="assets/project-images/ShopEaseKenya.png" alt="ShopEase Kenya Store">
+          <img src="assets/project-images/ShopEaseKenya.png" alt="ShopEase Kenya Store" loading="lazy">
           <div class="project-overlay">
             <div class="project-actions">
               <a href=" https://alexdev-dot.github.io/ShopEase-Kenya/" class="visit-site">
@@ -223,7 +272,7 @@
       <!-- Custom Solution Project -->
       <div class="project-card" data-category="custom">
         <div class="project-image">
-          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="CRM System">
+          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="CRM System" loading="lazy">
           <div class="project-overlay">
             <div class="project-actions">
               <a href="#" class="visit-site">
@@ -252,7 +301,7 @@
       <!-- Web Development Project 2 -->
       <div class="project-card" data-category="web">
         <div class="project-image">
-          <img src="assets/project-images/Zetech-event system.png" alt="Zetech-event system">
+          <img src="assets/project-images/Zetech-event system.png" alt="Zetech-event system" loading="lazy">
           <div class="project-overlay">
             <div class="project-actions">
               <a href="#" class="visit-site">
@@ -320,15 +369,15 @@
       <!-- Company Info -->
       <div class="footer-section">
         <div class="footer-logo">
-          <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="footer-logo-img">
+          <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="footer-logo-img" loading="lazy">
         </div>
         <p>We provide innovative digital solutions that help businesses grow and succeed in the modern digital landscape. From web development to digital marketing, we've got you covered.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="X"><i class="fa-brands fa-square-x-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://facebook.com/zimoratechnologies" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/ZimoraTech" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-square-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/zimoratechnologies" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/zimoratechnologies" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com/@zimoratechnologies" aria-label="YouTube" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
 
@@ -402,15 +451,68 @@
 </footer>
 
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/254117411547?text=Hello" 
+<a href="https://wa.me/254117411547?text=Hi%2C%20Zimora%20Technologies%2C%20I'm%20interested%20in%20your%20tech%20solutions%2C%20Can%20we%20chat%20about%20how%20you%20can%20help%20my%20business%3F" 
    class="whatsapp-float" 
    target="_blank" 
    rel="noopener">
    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="WhatsApp" width="60">
+        alt="WhatsApp" width="60" loading="lazy">
 </a>
 
+<!-- Chatbox -->
+<div class="chatbox-container" id="chatbox">
+  <div class="chatbox-header">
+    <div class="chatbox-header-content">
+      <div class="chatbox-avatar">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <div class="chatbox-info">
+        <h4>Zimora Assistant</h4>
+        <span class="chatbox-status">Online</span>
+      </div>
+    </div>
+    <div class="chatbox-header-controls">
+      <button class="mode-toggle-btn" id="modeToggle" title="Switch to voice mode">
+        <i class="fa-solid fa-keyboard"></i>
+      </button>
+      <button class="voice-toggle-btn" id="voiceToggle" title="Toggle voice responses" style="display: none;">
+        <i class="fa-solid fa-volume-up"></i>
+      </button>
+      <button class="chatbox-close" id="chatboxClose">
+        <i class="fa-solid fa-times"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="chatbox-messages" id="chatboxMessages">
+    <div class="message bot-message">
+      <div class="message-avatar">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <div class="message-content">
+        <p>Hello! I'm the Zimora Technologies assistant. How can I help you learn about our projects today?</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="chatbox-input-container">
+    <div class="chatbox-input-wrapper">
+      <input type="text" id="chatboxInput" placeholder="Type your message..." />
+      <button id="chatboxSend">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Chatbox Toggle Button -->
+<button class="chatbox-toggle" id="chatboxToggle">
+  <i class="fa-solid fa-comments"></i>
+  <span class="chatbox-badge">1</span>
+</button>
+
 <script src="js/main.js"></script>
+<script src="js/chatbox.js"></script>
 <script src="js/projects.js"></script>
 </body>
 </html>

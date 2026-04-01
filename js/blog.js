@@ -1,0 +1,216 @@
+// Blog Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const blogPosts = document.querySelectorAll('.blog-post');
+    
+    // Calculate and update category counts
+    function updateCategoryCounts() {
+        const categories = {};
+        
+        // Count posts in each category
+        blogPosts.forEach(post => {
+            const categoryElement = post.querySelector('.category');
+            const postCategory = categoryElement ? categoryElement.textContent.trim() : '';
+            
+            if (postCategory) {
+                categories[postCategory] = (categories[postCategory] || 0) + 1;
+            }
+        });
+        
+        // Update filter buttons with counts
+        categoryFilters.forEach(filter => {
+            const categoryName = filter.textContent.trim();
+            
+            if (categoryName === 'All Posts') {
+                // Show total count for "All Posts"
+                const totalCount = blogPosts.length;
+                filter.innerHTML = `${categoryName} <span class="category-count">(${totalCount})</span>`;
+            } else {
+                // Show count for specific category
+                const count = categories[categoryName] || 0;
+                filter.innerHTML = `${categoryName} <span class="category-count">(${count})</span>`;
+            }
+        });
+    }
+    
+    // Initialize filter functionality
+    function initializeBlogFilter() {
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                // Remove active class from all filters
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                
+                // Add active class to clicked filter
+                this.classList.add('active');
+                
+                // Get selected category (remove count from text)
+                const selectedCategory = this.textContent.replace(/\s*\(\d+\)/, '').trim();
+                
+                // Filter blog posts
+                filterBlogPosts(selectedCategory);
+            });
+        });
+    }
+    
+    // Filter blog posts based on category
+    function filterBlogPosts(category) {
+        let visibleCount = 0;
+        
+        blogPosts.forEach(post => {
+            const categoryElement = post.querySelector('.category');
+            const postCategory = categoryElement ? categoryElement.textContent.trim() : '';
+            
+            // Show/hide post based on category
+            if (category === 'All Posts' || postCategory === category) {
+                post.style.display = '';
+                post.style.animation = 'fadeInUp 0.5s ease-out';
+                visibleCount++;
+                
+                // Add animation delay for staggered effect
+                setTimeout(() => {
+                    post.style.opacity = '1';
+                    post.style.transform = 'translateY(0)';
+                }, visibleCount * 100);
+            } else {
+                post.style.opacity = '0';
+                post.style.transform = 'translateY(20px)';
+                post.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    post.style.display = 'none';
+                }, 300);
+            }
+        });
+        
+        // Update load more button visibility
+        updateLoadMoreButton(visibleCount);
+        
+        // Show message if no posts found
+        showNoPostsMessage(visibleCount);
+    }
+    
+    // Update load more button based on visible posts
+    function updateLoadMoreButton(visibleCount) {
+        const loadMoreContainer = document.querySelector('.load-more-container');
+        if (loadMoreContainer) {
+            if (visibleCount === 0) {
+                loadMoreContainer.style.display = 'none';
+            } else {
+                loadMoreContainer.style.display = 'block';
+            }
+        }
+    }
+    
+    // Show no posts message
+    function showNoPostsMessage(visibleCount) {
+        // Remove existing message if any
+        const existingMessage = document.querySelector('.no-posts-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Add message if no posts found
+        if (visibleCount === 0) {
+            const blogGrid = document.querySelector('.blog-grid');
+            const message = document.createElement('div');
+            message.className = 'no-posts-message';
+            message.innerHTML = `
+                <div style="text-align: center; padding: 60px 20px; grid-column: 1 / -1;">
+                    <i class="fa-solid fa-search" style="font-size: 3rem; color: #6b7280; margin-bottom: 20px; display: block;"></i>
+                    <h3 style="color: #1a202c; margin-bottom: 10px;">No posts found</h3>
+                    <p style="color: #6b7280;">Try selecting a different category or check back later for new content.</p>
+                </div>
+            `;
+            blogGrid.appendChild(message);
+        }
+    }
+    
+    // Load more functionality
+    function initializeLoadMore() {
+        const loadMoreBtn = document.querySelector('.load-more-btn');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                // Simulate loading more posts
+                this.textContent = 'Loading...';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    this.textContent = 'Load More Articles';
+                    this.disabled = false;
+                    
+                    // In a real application, you would load more posts here
+                    // For now, just show a message
+                    showLoadMoreMessage();
+                }, 1000);
+            });
+        }
+    }
+    
+    // Show load more message
+    function showLoadMoreMessage() {
+        const message = document.createElement('div');
+        message.style.cssText = `
+            text-align: center;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #6b7280;
+            grid-column: 1 / -1;
+        `;
+        message.innerHTML = '<i class="fa-solid fa-info-circle"></i> No more posts to load at the moment.';
+        
+        const blogGrid = document.querySelector('.blog-grid');
+        blogGrid.appendChild(message);
+        
+        // Hide load more button
+        const loadMoreContainer = document.querySelector('.load-more-container');
+        if (loadMoreContainer) {
+            loadMoreContainer.style.display = 'none';
+        }
+        
+        // Remove message after 3 seconds
+        setTimeout(() => {
+            message.remove();
+            if (loadMoreContainer) {
+                loadMoreContainer.style.display = 'block';
+            }
+        }, 3000);
+    }
+    
+    // Initialize everything
+    updateCategoryCounts();
+    initializeBlogFilter();
+    initializeLoadMore();
+    
+    // Add CSS for animations
+    const style = document.createElement('style');
+    style.textContent = `
+        .blog-post {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post[style*="display: none"] {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .no-posts-message {
+            animation: fadeInUp 0.5s ease-out;
+        }
+    `;
+    document.head.appendChild(style);
+});

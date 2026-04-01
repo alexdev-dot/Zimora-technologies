@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<title>Blog - Zimora Technologies | Latest IT Insights & Technology Trends</title>
+<meta name="description" content="Stay updated with the latest technology trends, web development tips, digital marketing strategies, and IT insights from Zimora Technologies experts.">
+<meta name="keywords" content="technology blog, web development blog, IT insights, digital marketing tips, cybersecurity trends, mobile app development, cloud computing, AI development">
+<meta name="author" content="Zimora Technologies">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="language" content="English">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Blog - Zimora Technologies | Latest IT Insights & Technology Trends">
+<meta property="og:description" content="Stay updated with the latest technology trends, web development tips, digital marketing strategies, and IT insights from Zimora Technologies experts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimoratech.co.ke/blog">
+<meta property="og:image" content="https://zimoratech.co.ke/assets/images/blog-og-image.jpg">
+<meta property="og:site_name" content="Zimora Technologies">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog - Zimora Technologies | Latest IT Insights & Technology Trends">
+<meta name="twitter:description" content="Stay updated with the latest technology trends, web development tips, digital marketing strategies, and IT insights from Zimora Technologies experts.">
+<meta name="twitter:image" content="https://zimoratech.co.ke/assets/images/blog-twitter-card.jpg">
+<meta name="twitter:site" content="@ZimoraTech">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://zimoratech.co.ke/blog">
+
+<!-- Additional SEO Tags -->
+<meta name="theme-color" content="#ff4d00">
+<meta name="msapplication-TileColor" content="#ff4d00">
+<meta name="application-name" content="Zimora Technologies Blog">
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Zimora Technologies Blog",
+  "description": "Latest technology insights, web development tips, digital marketing strategies, and IT trends",
+  "url": "https://zimoratech.co.ke/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zimora Technologies",
+    "url": "https://zimoratech.co.ke/"
+  },
+  "inLanguage": "en-US",
+  "about": [
+    "Web Development",
+    "Mobile App Development",
+    "Digital Marketing",
+    "Cybersecurity",
+    "Technology",
+    "Cloud Computing"
+  ]
+}
+</script>
+
+<!-- Performance Optimization -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="//img.freepik.com">
+
+<!-- Favicon -->
+<link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/blog-style.css">
+<link rel="stylesheet" href="css/chatbox.css">
+<link rel="stylesheet" href="fonts/zimora-fonts.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+  <div class="container">
+    <div class="top-header-left">
+      <span class="header-email">zimoratechnologies@gmail.com</span>
+      <span class="header-time" id="currentTime"></span>
+    </div>
+    <div class="top-header-right">
+      <a href="https://facebook.com/zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://twitter.com/ZimoraTech" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <a href="https://linkedin.com/company/zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://instagram.com/zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://tiktok.com/@zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://youtube.com/@zimoratechnologies" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="logo-img" loading="lazy">
+    </div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Our Projects</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <button class="nav-quote-btn" onclick="window.location.href='contact.html'">Get a Quote</button>
+    </nav>
+    <i class="fa-solid fa-bars menu" onclick="toggleMenu()"></i>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="about-hero">
+  <div class="about-hero-background">
+    <div class="about-hero-overlay"></div>
+  </div>
+  <div class="about-hero-container">
+    <div class="about-hero-content">
+      <div class="about-hero-subtitle">
+        <span class="about-hero-line"></span>
+        OUR BLOG
+      </div>
+      <h1 class="about-hero-title">
+        Insights & <span class="highlight">Innovation</span>
+      </h1>
+      <p class="about-hero-description">
+        Explore the latest trends, expert insights, and innovative solutions in web development, mobile apps, and digital marketing from our team of experts.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="blog-container">
+            <div class="blog-header">
+                <h1 class="blog-title">Latest Articles</h1>
+                <p class="blog-subtitle">Stay updated with the latest insights, trends, and innovations from our expert team</p>
+            </div>
+            
+            <div class="blog-categories">
+                <button class="category-filter active">All Posts</button>
+                <button class="category-filter">Web Development</button>
+                <button class="category-filter">App Development</button>
+                <button class="category-filter">Digital Marketing</button>
+                <button class="category-filter">Technology</button>
+                <button class="category-filter">Security</button>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Featured Post -->
+                <article class="blog-post featured">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 1.jpg" alt="Web Development Trends" loading="lazy" width="800" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Web Development</span>
+                            <span class="date">April 1, 2026</span>
+                        </div>
+                        <h2>The Future of Web Development: Trends to Watch in 2026</h2>
+                        <p>Explore the cutting-edge technologies and frameworks that are shaping the future of web development, from AI-powered tools to advanced JavaScript frameworks.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Regular Posts -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 2.jpg" alt="Mobile App Development" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">App Development</span>
+                            <span class="date">March 20, 2026</span>
+                        </div>
+                        <h3>Building Scalable Mobile Apps: Best Practices</h3>
+                        <p>Learn the essential strategies for creating mobile applications that can grow with your business and handle millions of users.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 3.jpg" alt="Digital Marketing" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Digital Marketing</span>
+                            <span class="date">March 25, 2026</span>
+                        </div>
+                        <h3>SEO Strategies That Actually Work in 2026</h3>
+                        <p>Discover the latest SEO techniques that are driving results for businesses in today's competitive digital landscape.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 4.jpg" alt="UI/UX Design" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Web Development</span>
+                            <span class="date">February 28, 2026</span>
+                        </div>
+                        <h3>The Psychology of Great UI/UX Design</h3>
+                        <p>Understanding user behavior and cognitive psychology to create interfaces that convert and delight users.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 5.jpg" alt="Cloud Computing" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Technology</span>
+                            <span class="date">March 8, 2026</span>
+                        </div>
+                        <h3>Cloud Computing: Transforming Business Operations</h3>
+                        <p>How cloud technology is revolutionizing the way businesses operate and scale their digital infrastructure.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 6.jpg" alt="Cybersecurity" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Security</span>
+                            <span class="date">March 5, 2026</span>
+                        </div>
+                        <h3>Cybersecurity Essentials for Modern Businesses</h3>
+                        <p>Protecting your digital assets with the latest security practices and threat prevention strategies.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 7.jpg" alt="Artificial Intelligence" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Technology</span>
+                            <span class="date">March 22, 2026</span>
+                        </div>
+                        <h3>AI-First Development – How AI is Becoming Core of Web Development in 2026</h3>
+                        <p>AI-first development has shifted from a nice-to-have to an absolute necessity. Developers now use AI agents for boilerplate code, architecture suggestions, real-time debugging, and generating entire features from natural language prompts.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Additional Blog Posts -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 8.jpg" alt="E-commerce Solutions" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Web Development</span>
+                            <span class="date">March 20, 2026</span>
+                        </div>
+                        <h3>E-commerce Trends: What's Driving Online Sales in 2026</h3>
+                        <p>Discover the latest e-commerce trends that are transforming how businesses sell online, from AI-powered recommendations to immersive shopping experiences.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 9.jpg" alt="Mobile UX Design" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">App Development</span>
+                            <span class="date">March 25, 2026</span>
+                        </div>
+                        <h3>Mobile UX Design Principles for Better User Retention</h3>
+                        <p>Learn the essential UX design principles that keep users engaged and coming back to your mobile app day after day.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 10.jpg" alt="Content Marketing" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Digital Marketing</span>
+                            <span class="date">March 15, 2026</span>
+                        </div>
+                        <h3>Content Marketing Strategies That Convert in 2026</h3>
+                        <p>Explore proven content marketing techniques that drive engagement, build authority, and convert visitors into loyal customers.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 11.jpg" alt="Cloud Security" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Security</span>
+                            <span class="date">February 28, 2026</span>
+                        </div>
+                        <h3>Cloud Security Best Practices for Modern Businesses</h3>
+                        <p>Essential security measures every business should implement to protect their cloud infrastructure and sensitive data.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 12.jpg" alt="Blockchain Technology" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Technology</span>
+                            <span class="date">January 5, 2026</span>
+                        </div>
+                        <h3>Beyond Cryptocurrency: Blockchain in Business Applications</h3>
+                        <p>How blockchain technology is revolutionizing supply chain management, digital identity, and secure business transactions.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 13.jpg" alt="Progressive Web Apps" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Web Development</span>
+                            <span class="date">March 1, 2026</span>
+                        </div>
+                        <h3>Progressive Web Apps: The Future of Mobile Web Experience</h3>
+                        <p>Why PWAs are becoming the preferred choice for businesses looking to deliver native app experiences through web browsers.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 14.png" alt="iOS Development" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">App Development</span>
+                            <span class="date">March 5, 2026</span>
+                        </div>
+                        <h3>iOS 18 Development: What's New for App Developers</h3>
+                        <p>Explore the latest features and capabilities in iOS 18 that developers can leverage to create amazing iPhone and iPad apps.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 15.jpg" alt="Social Media Marketing" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Digital Marketing</span>
+                            <span class="date">January 10, 2026</span>
+                        </div>
+                        <h3>Social Media Marketing: Building Brand Communities in 2026</h3>
+                        <p>Strategies for creating engaged communities around your brand on social media platforms that drive long-term loyalty.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 16.jpg" alt="Machine Learning" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Technology</span>
+                            <span class="date">March 1, 2026</span>
+                        </div>
+                        <h3>Machine Learning for Business: Practical Applications</h3>
+                        <p>Real-world machine learning applications that businesses can implement today to improve operations and customer experience.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 17.jpg" alt="Data Privacy" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Security</span>
+                            <span class="date">February 28, 2026</span>
+                        </div>
+                        <h3>Data Privacy Compliance: What Businesses Need to Know</h3>
+                        <p>Navigating GDPR, CCPA, and emerging data privacy regulations to protect your business and customer data.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="assets/blog-images/Blog 18.jpg" alt="API Development" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="category">Web Development</span>
+                            <span class="date">January 25, 2026</span>
+                        </div>
+                        <h3>REST vs GraphQL: Choosing the Right API Architecture</h3>
+                        <p>A comprehensive comparison of REST and GraphQL to help you choose the best API approach for your next project.</p>
+                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/Zimora.png" alt="Zimora Technologies" class="footer-logo-img" loading="lazy">
+                    </div>
+                    <p>We provide innovative digital solutions that help businesses grow and succeed in modern digital landscape. From web development to digital marketing, we've got you covered.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/zimoratechnologies" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/ZimoraTech" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="https://linkedin.com/company/zimoratechnologies" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/zimoratechnologies" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com/@zimoratechnologies" aria-label="YouTube" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Our Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">App Development</a></li>
+                        <li><a href="services.html">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Subscription -->
+                <div class="footer-section">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for latest tech insights, tips, and company updates delivered to your inbox.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-input-group">
+                            <input type="email" 
+                                   id="newsletterEmail" 
+                                   placeholder="Enter your email" 
+                                   required 
+                                   aria-label="Email for newsletter">
+                            <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="newsletter-message" id="newsletterMessage"></div>
+                    </form>
+                    <div class="newsletter-benefits">
+                        <div class="benefit-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Weekly tech insights</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Exclusive offers</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>No spam, unsubscribe anytime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 Zimora Technologies. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254117411547?text=Hi%2C%20Zimora%20Technologies%2C%20I'm%20interested%20in%20your%20tech%20solutions%2C%20Can%20we%20chat%20about%20how%20you%20can%20help%20my%20business%3F" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" width="60" loading="lazy">
+    </a>
+
+    <!-- Chatbox -->
+    <div class="chatbox-container" id="chatbox">
+        <div class="chatbox-header">
+            <div class="chatbox-header-content">
+                <div class="chatbox-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="chatbox-info">
+                    <h4>Zimora Assistant</h4>
+                    <span class="chatbox-status">Online</span>
+                </div>
+            </div>
+            <div class="chatbox-header-controls">
+                <button class="mode-toggle-btn" id="modeToggle" title="Switch to voice mode">
+                    <i class="fa-solid fa-keyboard"></i>
+                </button>
+                <button class="voice-toggle-btn" id="voiceToggle" title="Toggle voice responses" style="display: none;">
+                    <i class="fa-solid fa-volume-up"></i>
+                </button>
+                <button class="chatbox-close" id="chatboxClose">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chatbox-messages" id="chatboxMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>Hello! I'm the Zimora Technologies assistant. How can I help you learn about our blog topics and tech insights today?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbox-input-container">
+            <div class="chatbox-input-wrapper">
+                <input type="text" id="chatboxInput" placeholder="Type your message..." />
+                <button id="chatboxSend">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbox Toggle Button -->
+    <button class="chatbox-toggle" id="chatboxToggle">
+        <i class="fa-solid fa-comments"></i>
+        <span class="chatbox-badge">1</span>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbox.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
