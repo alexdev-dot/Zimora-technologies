@@ -395,3 +395,48 @@ function subscribeToNewsletter(email) {
     newsletterBtn.disabled = false;
   }, 1500); // Simulate network delay
 }
+
+// Back to Top Button functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Create back to top button
+  const backToTopButton = document.createElement('button');
+  backToTopButton.className = 'back-to-top';
+  backToTopButton.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+  backToTopButton.setAttribute('aria-label', 'Back to top');
+  document.body.appendChild(backToTopButton);
+  
+  // Show/hide button based on scroll position
+  function toggleBackToTopButton() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollPosition > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  }
+  
+  // Scroll to top when button is clicked
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  
+  // Add event listeners
+  window.addEventListener('scroll', toggleBackToTopButton);
+  backToTopButton.addEventListener('click', scrollToTop);
+  
+  // Initial check
+  toggleBackToTopButton();
+  
+  // Add keyboard support
+  document.addEventListener('keydown', function(e) {
+    // Press 'Home' key to scroll to top
+    if (e.key === 'Home' && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      scrollToTop();
+    }
+  });
+});
