@@ -37,7 +37,7 @@ class Chatbox {
       // Services
       'services': 'We offer comprehensive IT services including Web Development, Web Application Development, Digital Marketing, Hosting & Domain Setup, E-commerce Solutions, and Maintenance & Support. Each service is tailored to meet your specific business needs.',
       'web development': 'We create business and corporate websites, company portfolio websites, real estate platforms, custom web systems, responsive and mobile-friendly designs, and website optimization and performance improvements.',
-      'app development': 'Our web application development includes custom web applications, admin and management panels, API development and integrations, custom software solutions, and system maintenance and upgrades.',
+      'web app development': 'Our web application development includes custom web applications, admin and management panels, API development and integrations, custom software solutions, and system maintenance and upgrades.',
       'digital marketing': 'Our digital marketing services cover search engine optimization (SEO), social media marketing strategies, brand positioning and online presence, content marketing and planning, website traffic growth strategies, and performance analysis and reporting.',
       'hosting': 'Our hosting and domain setup services include domain registration support, website hosting setup, SSL installation, email hosting (business emails), and server configuration & deployment.',
       'domain': 'Our hosting and domain setup services include domain registration support, website hosting setup, SSL installation, email hosting (business emails), and server configuration & deployment.',
@@ -50,10 +50,10 @@ class Chatbox {
       'technologies': 'We work with modern technologies including React, Angular, Vue.js, Node.js, Python, JavaScript, HTML5, CSS3, WordPress, PHP, MySQL, Git, Docker, AWS, and Google Cloud.',
       
       // Contact info
-      'contact': 'You can reach us via email at zimoratechnologies@gmail.com, call us at +1 (555) 123-4567, or visit our office at Nairobi, Kenya - Westlands Business District, 1234 Tech Hub Building.',
-      'location': 'Our office is located in Nairobi, Kenya at Westlands Business District, 1234 Tech Hub Building.',
-      'email': 'You can email us at zimoratechnologies@gmail.com for general inquiries, support@zimoratech.com for support, or sales@zimoratech.com for sales.',
-      'phone': 'You can call us at: Main: +1 (555) 123-4567, Support: +1 (555) 123-4568, Sales: +1 (555) 123-4569.',
+      'contact': 'You can reach us via email at zimoratechnologies@gmail.com, call us at +254 (117) 411-547.',
+      'location': 'located in Ruiru, Kiambu',
+      'email': 'You can email us at zimoratechnologies@gmail.com for general inquiries.',
+      'phone': 'You can call us at: +254 117 411 547.',
       'hours': 'Our business hours are: Monday - Friday: 9:00 AM - 6:00 PM, Saturday: 10:00 AM - 2:00 PM, Sunday: Closed.',
       
       // Process and pricing
