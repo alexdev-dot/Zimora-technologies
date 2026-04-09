@@ -166,6 +166,31 @@
       <p class="about-hero-description">
         We are a passionate team of innovators dedicated to helping businesses thrive in the digital age through cutting-edge technology solutions and exceptional service.
       </p>
+      
+      <!-- STATS SECTION INSIDE HERO -->
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Delivered Projects</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-number" data-target="24">0</div>
+            <div class="stat-label">Support 24/7</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -522,15 +547,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const animateCounter = (counter) => {
     const target = +counter.getAttribute('data-target');
     const increment = target / speed;
+    let count = 0;
 
     const updateCount = () => {
-      const count = +counter.innerText;
+      count += increment;
       
       if (count < target) {
-        counter.innerText = Math.ceil(count + increment);
+        counter.innerText = Math.ceil(count);
         setTimeout(updateCount, 10);
       } else {
         counter.innerText = target;
+        // Add animation class when complete
+        counter.classList.add('animated');
       }
     };
 
