@@ -176,12 +176,12 @@
           </div>
           
           <div class="stat-item">
-            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-number" id="deliveredProjects">0</div>
             <div class="stat-label">Delivered Projects</div>
           </div>
           
           <div class="stat-item">
-            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-number" id="yearsExperience">0</div>
             <div class="stat-label">Years of Experience</div>
           </div>
           
@@ -539,8 +539,74 @@
 <script src="js/main.js"></script>
 <script src="js/chatbox.js"></script>
 <script>
+// Calculate years of experience from January 2026
+function calculateYearsOfExperience() {
+  const startDate = new Date('2026-01-01'); // Website start date
+  const currentDate = new Date();
+  
+  // Calculate the difference in years
+  let years = currentDate.getFullYear() - startDate.getFullYear();
+  const monthDiff = currentDate.getMonth() - startDate.getMonth();
+  
+  // Adjust if current month is before January
+  if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < startDate.getDate())) {
+    years--;
+  }
+  
+  return years;
+}
+
+// Update years of experience display
+function updateYearsExperience() {
+  const yearsElement = document.getElementById('yearsExperience');
+  if (yearsElement) {
+    const years = calculateYearsOfExperience();
+    yearsElement.setAttribute('data-target', years);
+  }
+}
+
+// Count completed projects from projects page
+async function countCompletedProjects() {
+  try {
+    // Fetch the projects page HTML
+    const response = await fetch('projects.html');
+    const html = await response.text();
+    
+    // Create a temporary DOM element to parse the HTML
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+    
+    // Count all project cards
+    const allProjects = tempDiv.querySelectorAll('.project-card');
+    
+    // Count only completed projects (those with "completed" status badge)
+    const completedProjects = tempDiv.querySelectorAll('.project-card .status-badge.completed');
+    
+    // Return the total number of projects (delivered = all projects)
+    return allProjects.length;
+  } catch (error) {
+    console.error('Error counting projects:', error);
+    return 10; // Fallback to current value if fetch fails
+  }
+}
+
+// Update delivered projects display
+async function updateDeliveredProjects() {
+  const projectsElement = document.getElementById('deliveredProjects');
+  if (projectsElement) {
+    const projectCount = await countCompletedProjects();
+    projectsElement.setAttribute('data-target', projectCount);
+  }
+}
+
 // Animated Counter for Stats
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+  // Update years of experience first
+  updateYearsExperience();
+  
+  // Update delivered projects count
+  await updateDeliveredProjects();
+  
   const counters = document.querySelectorAll('.stat-number');
   const speed = 200;
 
@@ -568,8 +634,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Intersection Observer for stats animation
   const statsSection = document.querySelector('.stats-section');
   const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach(async (entry) => {
       if (entry.isIntersecting) {
+        // Update both stats when stats come into view
+        updateYearsExperience();
+        await updateDeliveredProjects();
         counters.forEach(counter => animateCounter(counter));
         statsObserver.unobserve(entry.target);
       }
@@ -579,7 +648,30 @@ document.addEventListener('DOMContentLoaded', function() {
   if (statsSection) {
     statsObserver.observe(statsSection);
   }
+  
+  // Also update on page load in case stats are already visible
+  updateYearsExperience();
+  await updateDeliveredProjects();
 });
+
+// Update years experience at midnight on January 1st each year
+function scheduleYearlyUpdate() {
+  const now = new Date();
+  const nextYear = new Date(now.getFullYear() + 1, 0, 1); // Next January 1st
+  const midnight = new Date(nextYear);
+  midnight.setHours(0, 0, 0, 0);
+  
+  const timeUntilMidnight = midnight - now;
+  
+  setTimeout(() => {
+    updateYearsExperience();
+    // Schedule the next year's update
+    scheduleYearlyUpdate();
+  }, timeUntilMidnight);
+}
+
+// Start the yearly update scheduler
+scheduleYearlyUpdate();
 </script>
 </body>
 </html>

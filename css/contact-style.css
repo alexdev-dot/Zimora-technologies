@@ -5,7 +5,9 @@
 .contact-hero {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   color: var(--text-primary);
-  padding: 120px 0 80px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -532,7 +534,8 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 100px 0 60px;
+    min-height: auto;
+    padding: 100px 0;
   }
   
   .contact-hero-info {

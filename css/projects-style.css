@@ -33,7 +33,7 @@
 /* PROJECTS HERO SECTION */
 .projects-hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -648,7 +648,8 @@
 
 @media (max-width: 768px) {
   .projects-hero {
-    min-height: 60vh;
+    min-height: auto;
+    padding: 100px 0;
   }
   
   .projects-hero-container {
