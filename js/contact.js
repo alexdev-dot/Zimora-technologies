@@ -166,7 +166,7 @@ if (contactForm) {
     submitBtn.innerHTML = 'Sending...';
     submitBtn.disabled = true;
     
-    // Simulate form submission (replace with actual API call)
+    // Simulate form submission
     setTimeout(() => {
       // Show success message
       showContactMessage('success', 'Thank you for your message! We\'ll get back to you within 24 hours.');
@@ -178,7 +178,7 @@ if (contactForm) {
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
       
-      // Log form data (for demonstration)
+      // Log form data for demonstration
       console.log('Contact form submitted:', data);
     }, 2000);
   });

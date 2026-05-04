@@ -143,7 +143,7 @@ body {
 .navbar {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
-  padding: 18px 0;
+  padding: 12px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -191,7 +191,7 @@ body {
   transition: var(--transition-base);
   position: absolute;
   top: 50%;
-  left: -90px;
+  left: -70px;
   transform: translateY(-50%);
 }
 
@@ -202,19 +202,19 @@ body {
 nav {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-left: 50px;
+  gap: 6px;
+  margin-left: 40px;
 }
 
 nav a {
   color: #2c3e50;
   text-decoration: none;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   transition: var(--transition-base);
   position: relative;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
   background: transparent;
 }
 
