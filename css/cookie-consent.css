@@ -1,17 +1,33 @@
-/* Cookie Consent Banner */
+/* Cookie Consent Banner - Optimized for Core Web Vitals */
 .cookie-consent {
+  /* Prevent layout shift by fixing position and size */
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  
+  /* Optimize rendering performance */
+  will-change: transform;
+  contain: layout style paint;
+  
+  /* Use transform instead of changing bottom property */
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Visual styling */
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   color: #ffffff;
   padding: 20px;
   z-index: 10000;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(100%);
-  transition: transform 0.3s ease-in-out;
   border-top: 2px solid #ff4d00;
+  
+  /* Optimize for mobile */
+  max-height: 50vh;
+  overflow-y: auto;
+  
+  /* Ensure smooth scrolling on mobile */
+  -webkit-overflow-scrolling: touch;
 }
 
 .cookie-consent.show {
@@ -26,6 +42,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+  
+  /* Optimize layout performance */
+  contain: layout;
+  
+  /* Ensure consistent spacing */
+  min-height: 80px;
 }
 
 .cookie-consent-text {
@@ -84,6 +106,23 @@
   display: inline-block;
   min-width: 80px;
   text-align: center;
+  /* Accessibility improvements */
+  outline: none;
+  position: relative;
+}
+
+.cookie-btn:focus {
+  outline: 2px solid #ff4d00;
+  outline-offset: 2px;
+}
+
+.cookie-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.cookie-btn:focus-visible {
+  outline: 2px solid #ff4d00;
+  outline-offset: 2px;
 }
 
 .cookie-btn-accept {
@@ -260,6 +299,22 @@
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.3s ease;
+  /* Accessibility improvements */
+  outline: none;
+}
+
+.toggle-switch:focus {
+  outline: 2px solid #ff4d00;
+  outline-offset: 2px;
+}
+
+.toggle-switch:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.toggle-switch:focus-visible {
+  outline: 2px solid #ff4d00;
+  outline-offset: 2px;
 }
 
 .toggle-switch.active {
