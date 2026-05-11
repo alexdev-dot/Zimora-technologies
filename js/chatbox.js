@@ -25,6 +25,34 @@ class Chatbox {
     this.isOpen = false;
     this.messageCount = 1;
     
+    // Conversation memory
+    this.conversationHistory = [];
+    this.userProfile = {
+      name: null,
+      interests: [],
+      previousTopics: [],
+      lastInteraction: null
+    };
+    
+    // Personality traits
+    this.personality = {
+      enthusiasm: 0.7,
+      empathy: 0.8,
+      helpfulness: 0.9,
+      casualness: 0.6
+    };
+    
+    // Response patterns for natural conversation
+    this.conversationPatterns = {
+      greetings: ['Hello there!', 'Hi!', 'Hey!', 'Good to see you!', 'Welcome!'],
+      acknowledgments: ['I see', 'Got it', 'That makes sense', 'I understand', 'Right'],
+      transitions: ['Speaking of which', 'That reminds me', 'By the way', 'You know what', 'Interesting'],
+      enthusiasm: ['That\'s great!', 'Excellent!', 'Wonderful!', 'Fantastic!', 'That\'s exciting!'],
+      thinking: ['Let me think about that...', 'Hmm, good question...', 'That\'s interesting...', 'Well...', 'So...'],
+      helpful: ['I\'d be happy to help with that!', 'Let me assist you with this', 'I can definitely help', 'Here\'s what I can do'],
+      casual: ['Awesome!', 'Cool!', 'Great!', 'Perfect!', 'Sounds good!']
+    };
+    
     this.knowledgeBase = {
       // General company info
       'company': 'Zimora Technologies is a modern IT solutions company focused on delivering high-quality digital products that help businesses grow, compete and scale in today\'s fast-paced digital world.',
@@ -64,15 +92,20 @@ class Chatbox {
       'why choose': 'You should choose Zimora Technologies for our client-focused development approach, modern and scalable technologies, clean and user-friendly designs, transparent communication, and reliable support and maintenance.',
       
       // Default responses
-      'hello': 'Hello! Welcome to Zimora Technologies. How can I help you today?',
-      'hi': 'Hi there! I\'m here to help you learn about our services and solutions. What would you like to know?',
-      'thanks': 'You\'re welcome! Is there anything else I can help you with?',
-      'thank you': 'You\'re welcome! Feel free to ask if you have more questions.',
-      'bye': 'Goodbye! Feel free to reach out anytime if you need assistance.',
-      'goodbye': 'Goodbye! We look forward to helping you with your digital needs.',
+      'hello': this.getRandomPattern('greetings') + ' Welcome to Zimora Technologies! I\'m excited to help you explore our digital solutions. What brings you here today?',
+      'hi': this.getRandomPattern('greetings') + ' Great to connect with you! I\'m here to help you learn about our services. What\'s on your mind?',
+      'hey': 'Hey there! I\'m glad you reached out. How can I assist you with your digital needs today?',
+      'good morning': 'Good morning! I hope you\'re having a great start to your day. How can I help you with our tech solutions?',
+      'good afternoon': 'Good afternoon! Thanks for stopping by. What can I help you with today?',
+      'thanks': this.getRandomPattern('casual') + ' You\'re very welcome! Is there anything else I can help you with?',
+      'thank you': 'My pleasure! I\'m always here to help. What else would you like to know?',
+      'bye': this.getRandomPattern('casual') + ' It was great chatting with you! Feel free to reach out anytime. Have a wonderful day!',
+      'goodbye': 'Goodbye for now! I am here whenever you need assistance with your digital projects. Take care!',
+      'see you': 'See you later! Don\'t hesitate to come back if you need more help.',
+      'how are you': 'I am doing fantastic, thanks for asking! I am always excited to help people like you discover great tech solutions. How are you doing today?',
 
       // Reply (added)
-      'reply': 'Thank you for your message! We appreciate you reaching out to Zimora Technologies. How can we assist you today with your web development, web application development, or digital marketing needs?'
+      'reply': 'Thank you so much for reaching out! I really appreciate you taking time to connect with Zimora Technologies. ' + this.getRandomPattern('helpful') + ' What specific area can I assist you with today - web development, digital marketing, or perhaps our custom solutions?'
     };
     
     this.init();
@@ -109,6 +142,135 @@ class Chatbox {
     // Initialize chatbox state
     this.resetChatbox();
     this.updateModeUI();
+  }
+  
+  // Helper method to get random pattern from conversation patterns
+  getRandomPattern(type) {
+    const patterns = this.conversationPatterns[type];
+    if (!patterns || patterns.length === 0) return '';
+    return patterns[Math.floor(Math.random() * patterns.length)];
+  }
+  
+  // Helper method to add personality to responses
+  addPersonalityToResponse(baseResponse) {
+    const random = Math.random();
+    let enhancedResponse = baseResponse;
+    
+    // Add enthusiasm based on personality trait
+    if (random < this.personality.enthusiasm) {
+      const enthusiasm = this.getRandomPattern('enthusiasm');
+      enhancedResponse = enthusiasm + ' ' + enhancedResponse;
+    }
+    
+    // Add casual touch
+    if (random < this.personality.casualness) {
+      const casual = this.getRandomPattern('casual');
+      enhancedResponse = enhancedResponse + ' ' + casual;
+    }
+    
+    return enhancedResponse;
+  }
+  
+  // Helper method to simulate thinking time
+  getThinkingDelay(messageLength) {
+    // Base delay + variable time based on message complexity
+    const baseDelay = 800;
+    const complexityDelay = Math.min(messageLength * 50, 2000);
+    const randomVariation = Math.random() * 1000;
+    
+    return baseDelay + complexityDelay + randomVariation;
+  }
+  
+  // Helper method to update conversation memory
+  updateConversationHistory(userMessage, botResponse) {
+    this.conversationHistory.push({
+      userMessage,
+      botResponse,
+      timestamp: new Date().toISOString(),
+      topics: this.extractTopics(userMessage)
+    });
+    
+    // Keep only last 10 conversations to avoid memory bloat
+    if (this.conversationHistory.length > 10) {
+      this.conversationHistory.shift();
+    }
+    
+    // Update user profile
+    this.updateUserProfile(userMessage);
+  }
+  
+  // Helper method to extract topics from messages
+  extractTopics(message) {
+    const topics = [];
+    const topicKeywords = {
+      'web development': ['web', 'website', 'development', 'design', 'frontend', 'backend'],
+      'digital marketing': ['marketing', 'seo', 'social media', 'advertising', 'promotion'],
+      'e-commerce': ['ecommerce', 'e-commerce', 'shop', 'store', 'payment', 'shopping'],
+      'hosting': ['hosting', 'server', 'domain', 'ssl', 'email'],
+      'mobile': ['mobile', 'app', 'ios', 'android'],
+      'pricing': ['price', 'cost', 'pricing', 'budget', 'quote'],
+      'contact': ['contact', 'reach', 'email', 'phone', 'call']
+    };
+    
+    const lowerMessage = message.toLowerCase();
+    for (const [topic, keywords] of Object.entries(topicKeywords)) {
+      if (keywords.some(keyword => lowerMessage.includes(keyword))) {
+        topics.push(topic);
+      }
+    }
+    
+    return topics;
+  }
+  
+  // Helper method to update user profile
+  updateUserProfile(message) {
+    const topics = this.extractTopics(message);
+    
+    // Add new interests
+    topics.forEach(topic => {
+      if (!this.userProfile.interests.includes(topic)) {
+        this.userProfile.interests.push(topic);
+      }
+    });
+    
+    // Update previous topics
+    this.userProfile.previousTopics = [...new Set([...this.userProfile.previousTopics, ...topics])];
+    this.userProfile.lastInteraction = new Date().toISOString();
+  }
+  
+  // Helper method to generate contextual follow-up questions
+  generateFollowUpQuestion(currentTopics) {
+    const followUps = {
+      'web development': [
+        'What type of website are you looking to create?',
+        'Do you have any specific design preferences in mind?',
+        'What features would be most important for your website?'
+      ],
+      'digital marketing': [
+        'What are your main marketing goals?',
+        'Who is your target audience?',
+        'Have you tried any marketing strategies before?'
+      ],
+      'e-commerce': [
+        'What kind of products will you be selling?',
+        'Do you need help with payment gateway integration?',
+        'How many products do you plan to list?'
+      ],
+      'pricing': [
+        'What\'s your approximate budget for this project?',
+        'Would you like a detailed breakdown of our pricing?',
+        'Are you looking for a one-time project or ongoing support?'
+      ]
+    };
+    
+    for (const topic of currentTopics) {
+      if (followUps[topic]) {
+        const questions = followUps[topic];
+        return questions[Math.floor(Math.random() * questions.length)];
+      }
+    }
+    
+    return null;
   }
   
   initVoiceFeatures() {
@@ -525,15 +687,35 @@ class Chatbox {
     // Clear input
     this.chatboxInput.value = '';
     
-    // Show typing indicator
+    // Show thinking indicator with personality
     this.showTypingIndicator();
     
-    // Generate bot response
+    // Calculate thinking delay based on message complexity
+    const thinkingDelay = this.getThinkingDelay(message.length);
+    
+    // Generate bot response with delay
     setTimeout(() => {
       this.removeTypingIndicator();
       const response = this.generateResponse(message);
-      this.addMessage(response, 'bot');
-    }, 1000 + Math.random() * 1000); // Random delay for realism
+      const enhancedResponse = this.addPersonalityToResponse(response);
+      
+      this.addMessage(enhancedResponse, 'bot');
+      
+      // Update conversation memory
+      this.updateConversationHistory(message, enhancedResponse);
+      
+      // Generate contextual follow-up if appropriate
+      const topics = this.extractTopics(message);
+      if (Math.random() < 0.3 && topics.length > 0) { // 30% chance to ask follow-up
+        setTimeout(() => {
+          const followUp = this.generateFollowUpQuestion(topics);
+          if (followUp) {
+            const followUpWithPersonality = this.getRandomPattern('thinking') + ' ' + followUp;
+            this.addMessage(followUpWithPersonality, 'bot');
+          }
+        }, 2000 + Math.random() * 2000);
+      }
+    }, thinkingDelay);
   }
   
   addMessage(text, sender) {
@@ -624,6 +806,15 @@ class Chatbox {
   generateResponse(userMessage) {
     const message = userMessage.toLowerCase();
     
+    // Check for conversation context first
+    if (this.conversationHistory.length > 0) {
+      const lastTopic = this.userProfile.previousTopics[this.userProfile.previousTopics.length - 1];
+      if (lastTopic && this.extractTopics(userMessage).length === 0) {
+        // User is continuing conversation about previous topic
+        return this.getRandomPattern('acknowledgments') + ', let me tell you more about ' + lastTopic + '. ' + this.getDetailedTopicInfo(lastTopic);
+      }
+    }
+    
     // Check for exact matches first
     for (const [key, response] of Object.entries(this.knowledgeBase)) {
       if (message.includes(key)) {
@@ -631,28 +822,52 @@ class Chatbox {
       }
     }
     
-    // Check for service-related queries
+    // Enhanced service-related queries with personality
     if (message.includes('what') && message.includes('service')) {
-      return 'We offer six main services: Web Development (business websites, real estate platforms, custom web systems), Web Application Development (custom web applications, admin panels, APIs), Digital Marketing (SEO, social media, brand positioning), Hosting & Domain Setup (domain registration, SSL, server configuration), E-commerce Solutions (custom development, payment integration), and Maintenance & Support (24/7 technical support, updates). Which service interests you most?';
+      return this.getRandomPattern('helpful') + ' We offer six main services: Web Development (business websites, real estate platforms, custom web systems), Web Application Development (custom web applications, admin panels, APIs), Digital Marketing (SEO, social media, brand positioning), Hosting & Domain Setup (domain registration, SSL, server configuration), E-commerce Solutions (custom development, payment integration), and Maintenance & Support (24/7 technical support, updates). Which service interests you most?';
     }
     
-    // Check for pricing queries
+    // Enhanced pricing queries with empathy
     if (message.includes('price') || message.includes('cost') || message.includes('how much')) {
-      return 'Our pricing varies based on project complexity and requirements. We provide customized quotes after understanding your specific needs. Would you like to schedule a consultation to discuss your project?';
+      return this.getRandomPattern('thinking') + ' Our pricing varies based on project complexity and requirements. We provide customized quotes after understanding your specific needs. ' + this.getRandomPattern('enthusiasm') + ' Would you like to schedule a consultation to discuss your project?';
     }
     
-    // Check for project-related queries
+    // Enhanced project-related queries with enthusiasm
     if (message.includes('project') || message.includes('portfolio') || message.includes('work')) {
-      return 'We\'ve worked on various projects including business websites, real estate platforms, e-commerce solutions, mobile applications, web applications, and digital marketing campaigns. You can view some of our featured projects on the Our Projects page. What type of project are you interested in?';
+      return this.getRandomPattern('enthusiasm') + ' We\'ve worked on various projects including business websites, real estate platforms, e-commerce solutions, mobile applications, web applications, and digital marketing campaigns. You can view some of our featured projects on the Our Projects page. What type of project are you interested in?';
     }
     
-    // Check for help/support queries
+    // Enhanced help/support queries with warmth
     if (message.includes('help') || message.includes('support') || message.includes('assist')) {
-      return 'I\'m here to help! I can answer questions about our services (web development, web application development, digital marketing, hosting, e-commerce solutions), company details, contact information, technologies we use, and much more. What specific information would you like to know?';
+      return this.getRandomPattern('helpful') + ' I\'m here to help! I can answer questions about our services (web development, web application development, digital marketing, hosting, e-commerce solutions), company details, contact information, technologies we use, and much more. What specific information would you like to know?';
     }
     
-    // Default response
-    return 'I\'m not sure I understand. I can help you with information about our services (web development, web application development, digital marketing, hosting, e-commerce solutions), company details, contact information, and technologies we use. Could you please rephrase your question or ask about something specific?';
+    // Check for user emotions and respond empathetically
+    if (message.includes('confused') || message.includes('lost') || message.includes('unclear')) {
+      return this.getRandomPattern('acknowledgments') + ', I completely understand. Let me make this simpler for you. ' + this.getRandomPattern('helpful') + ' What specific challenge are you trying to solve with your business?';
+    }
+    
+    if (message.includes('excited') || message.includes('interested') || message.includes('looking forward')) {
+      return this.getRandomPattern('enthusiasm') + ' I\'m excited too! It sounds like you\'re ready to start something amazing. ' + this.getRandomPattern('helpful') + ' What service caught your attention?';
+    }
+    
+    // Enhanced default response with personality
+    const acknowledgment = this.getRandomPattern('acknowledgments');
+    const helpful = this.getRandomPattern('helpful');
+    return acknowledgment + ', I\'m not sure I understand completely. ' + helpful + ' I can help you with information about our services (web development, web application development, digital marketing, hosting, e-commerce solutions), company details, contact information, and technologies we use. Could you please rephrase your question or tell me more about what you\'re looking for?';
+  }
+  
+  // Helper method to get detailed topic information
+  getDetailedTopicInfo(topic) {
+    const topicDetails = {
+      'web development': 'We create stunning, responsive websites that not only look great but also perform exceptionally well. Our team focuses on user experience and conversion optimization.',
+      'digital marketing': 'Our marketing strategies are data-driven and tailored to your specific industry. We help you reach your target audience effectively.',
+      'e-commerce': 'We build secure, scalable online stores with seamless payment integration and inventory management systems.',
+      'hosting': 'We provide reliable hosting solutions with 99.9% uptime, daily backups, and excellent technical support.',
+      'pricing': 'We offer flexible pricing models to fit different budgets, from startups to enterprise-level solutions.'
+    };
+    
+    return topicDetails[topic] || 'Let me provide you with more detailed information about this area.';
   }
 }
 
