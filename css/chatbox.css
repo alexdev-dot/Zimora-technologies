@@ -448,8 +448,8 @@
 
 .chatbox-toggle {
     position: fixed;
-    bottom: 20px;
-    right: 80px;
+    bottom: 80px;
+    right: 20px;
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, #ff4d00, #ff6b35);
@@ -459,7 +459,7 @@
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(255, 77, 0, 0.3);
-    z-index: 99998;
+    z-index: 100000;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -535,30 +535,54 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .chatbox-container {
-        width: calc(100vw - 40px);
-        height: 60vh;
-        right: 20px;
-        left: 20px;
-        bottom: 80px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        z-index: 999999;
     }
-    
+
+    .chatbox-header {
+        border-radius: 0;
+    }
+
     .chatbox-toggle {
         right: 20px;
+        bottom: 80px;
         width: 50px;
         height: 50px;
         font-size: 20px;
     }
-    
+
     .whatsapp-float {
-        right: 80px !important;
+        right: 20px !important;
+        bottom: 20px !important;
     }
 }
 
 @media (max-width: 480px) {
     .chatbox-container {
-        height: 70vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
     }
-    
+
+    .chatbox-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
     .message-content {
         max-width: 85%;
     }

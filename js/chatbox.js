@@ -78,9 +78,9 @@ class Chatbox {
       'technologies': 'We work with modern technologies including React, Angular, Vue.js, Node.js, Python, JavaScript, HTML5, CSS3, WordPress, PHP, MySQL, Git, Docker, AWS, and Google Cloud.',
       
       // Contact info
-      'contact': 'You can reach us via email at zimoratechnologies@gmail.com, call us at +254 (117) 411-547.',
+      'contact': 'You can reach us via email at info@zimoratech.co.ke, call us at +254 (117) 411-547.',
       'location': 'located in Ruiru, Kiambu',
-      'email': 'You can email us at zimoratechnologies@gmail.com for general inquiries.',
+      'email': 'You can email us at info@zimoratech.co.ke for general inquiries.',
       'phone': 'You can call us at: +254 117 411 547.',
       'hours': 'Our business hours are: Monday - Friday: 9:00 AM - 6:00 PM, Saturday: 10:00 AM - 2:00 PM, Sunday: Closed.',
       
@@ -648,11 +648,13 @@ class Chatbox {
     this.chatboxBadge.style.display = 'none';
     this.isOpen = true;
     this.chatboxInput.focus();
+    document.body.style.overflow = 'hidden';
   }
-  
+
   closeChatbox() {
     this.chatbox.classList.remove('active');
     this.isOpen = false;
+    document.body.style.overflow = '';
   }
   
   resetChatbox() {

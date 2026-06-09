@@ -3626,7 +3626,7 @@ button:focus,
     position: fixed !important;           /* Ensure fixed positioning */
     bottom: 20px !important;              /* distance from bottom */
     right: 20px !important;               /* distance from right */
-    z-index: 99999 !important;            /* very high so it stays on top of everything */
+    z-index: 99997 !important;            /* lower than chatbot toggle */
     width: 45px !important;
     height: 45px !important;
     border-radius: 50% !important;

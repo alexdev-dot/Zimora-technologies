@@ -7,7 +7,7 @@ A professional, modern website for Zimora Technologies - a leading IT solutions 
 **Live URL:** https://zimoratech.co.ke/  
 **Development Year:** 2026  
 **Company Location:** Ruiru, Kiambu County, Kenya  
-**Contact:** +254 117 411 547 | zimoratechnologies@gmail.com  
+**Contact:** +254 117 411 547 | info@zimoratech.co.ke  
 
 ## 📋 Table of Contents
 
@@ -406,7 +406,7 @@ Contributions are welcome! Please follow these guidelines:
 ## 📞 Support
 
 For support and inquiries:
-- **Email:** zimoratechnologies@gmail.com
+- **Email:** info@zimoratech.co.ke
 - **Phone:** +254 117 411 547
 - **Website:** https://zimoratech.co.ke
 
