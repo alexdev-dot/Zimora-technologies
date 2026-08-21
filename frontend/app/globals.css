@@ -737,6 +737,13 @@ nav a.active {
   font-size: 18px;
 }
 
+/* Ensure hamburger menu is hidden on large screens (tablets and above) */
+@media (min-width: 769px) {
+  .menu {
+    display: none !important;
+  }
+}
+
 .menu:hover {
   background: linear-gradient(135deg, rgba(255, 77, 0, 0.2), rgba(255, 77, 0, 0.1));
   transform: scale(1.05);
