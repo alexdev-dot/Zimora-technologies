@@ -3,8 +3,10 @@ import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
 import Link from 'next/link';
+import { getRecentBlogPosts } from '@/data/blogPosts';
 
 export default function Home() {
+  const recentBlogs = getRecentBlogPosts(3);
   return (
     <>
       <SiteNavigation />
@@ -218,15 +220,28 @@ export default function Home() {
           </div>
           
           <div className="blogs-grid" id="recentBlogsGrid">
-            {/* Blog posts will be dynamically loaded here */}
-            <div className="loading-spinner">
-              <i className="fa-solid fa-spinner fa-spin"></i>
-              <p>Loading latest articles...</p>
-            </div>
+            {recentBlogs.map((blog) => (
+              <article key={blog.id} className="blog-card">
+                <div className="blog-card-image">
+                  <img src={blog.image} alt={blog.title} loading="lazy" width="600" height="400" />
+                </div>
+                <div className="blog-card-content">
+                  <div className="blog-card-meta">
+                    <span className="blog-card-category">{blog.category}</span>
+                    <span className="blog-card-date">{blog.date}</span>
+                  </div>
+                  <h3 className="blog-card-title">{blog.title}</h3>
+                  <p className="blog-card-description">{blog.description}</p>
+                  <Link href="/blog" className="blog-card-link">
+                    Read More <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
           
           <div className="blogs-cta">
-            <Link href="/blogs">
+            <Link href="/blog">
               <button className="btn-primary">View All Articles</button>
             </Link>
           </div>
