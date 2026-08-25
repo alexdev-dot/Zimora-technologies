@@ -1,22 +1,11 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import SiteNavigation from '@/components/site-navigation';
 import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
 import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Our Portfolio | Zimora Technologies - Web Development Projects',
-  description: 'Explore Zimora Technologies portfolio of successful web development projects including e-commerce platforms, real estate websites, and custom applications built for Kenyan businesses.',
-  keywords: 'web development portfolio, IT projects Kenya, software development projects, e-commerce websites, real estate platforms',
-  openGraph: {
-    title: 'Our Portfolio | Zimora Technologies',
-    description: 'Explore our successful web development projects and digital solutions',
-    url: 'https://zimoratech.co.ke/projects',
-    type: 'website',
-  },
-};
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('all');
