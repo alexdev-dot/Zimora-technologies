@@ -69,17 +69,17 @@ export default function Home() {
       <section className="services page-transition">
         <h2>Exclusive IT Services</h2>
         <div className="service-grid">
-          <div className="service-card hover-lift">
+          <div className="service-card">
             <i className="fa-solid fa-code"></i>
             <h3>Web Development</h3>
             <p>High-performance modern websites.</p>
           </div>
-          <div className="service-card hover-lift">
+          <div className="service-card">
             <i className="fa-solid fa-bullhorn"></i>
             <h3>Digital Marketing</h3>
             <p>SEO, branding & online growth.</p>
           </div>
-          <div className="service-card hover-lift">
+          <div className="service-card">
             <i className="fa-solid fa-rocket"></i>
             <h3>Web Applications</h3>
             <p>Custom web apps & solutions.</p>
@@ -149,11 +149,14 @@ export default function Home() {
 
       {/* WHY CHOOSE ZIMORA TECHNOLOGIES */}
       <section className="why-choose">
-        <h2>Why Choose Zimora Technologies</h2>
-        <p className="section-description">
-          We deliver exceptional digital solutions that drive business growth and success through innovation, expertise, and commitment to excellence.
-        </p>
-        <br />
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Why Choose Zimora Technologies</h2>
+            <p className="section-description">
+              We deliver exceptional digital solutions that drive business growth and success through innovation, expertise, and commitment to excellence.
+            </p>
+          </div>
+        </div>
         
         <div className="container">
           <div className="why-choose-grid">

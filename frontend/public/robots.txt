@@ -1,0 +1,13 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow specific paths if any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap
+Sitemap: https://zimoratech.co.ke/sitemap.xml
+
+# Crawl-delay (optional, remove if not needed)
+# Crawl-delay: 1

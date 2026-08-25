@@ -1,10 +1,21 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import SiteNavigation from '@/components/site-navigation';
 import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Zimora Technologies - Get in Touch Today',
+  description: 'Contact Zimora Technologies for professional IT solutions, web development, and digital services in Kenya. Reach us via phone, email, or visit our office in Ruiru, Kiambu County.',
+  keywords: 'contact Zimora Technologies, IT company contact Kenya, web development contact, digital services Kenya, tech support',
+  openGraph: {
+    title: 'Contact Us | Zimora Technologies',
+    description: 'Get in touch with Zimora Technologies for your IT solution needs',
+    url: 'https://zimoratech.co.ke/contact',
+    type: 'website',
+  },
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
