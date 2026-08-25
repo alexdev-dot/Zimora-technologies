@@ -171,6 +171,29 @@ export default function PrivacyPolicyLayout({
           })
         }}
       />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Consent",
+            "name": "Cookie Consent",
+            "description": "Zimora Technologies cookie consent management for GDPR compliance",
+            "url": "https://zimoratech.co.ke/privacy-policy#cookies",
+            "action": {
+              "@type": "ConsumeAction",
+              "name": "Accept Cookies",
+              "description": "User accepts cookies for analytics and marketing purposes"
+            },
+            "policy": {
+              "@type": "PrivacyPolicy",
+              "name": "Cookie Policy",
+              "url": "https://zimoratech.co.ke/privacy-policy#cookies"
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

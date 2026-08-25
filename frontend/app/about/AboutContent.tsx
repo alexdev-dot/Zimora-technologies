@@ -6,6 +6,7 @@ import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutContent() {
   const [stats, setStats] = useState({
@@ -166,14 +167,14 @@ export default function AboutContent() {
             
             <div className="about-image-section">
               <div className="main-image">
-                <img src="images/Company.jpg" alt="Our Journey" loading="lazy" />
+                <Image src="/images/Company.jpg" alt="Our Journey" width={800} height={600} loading="lazy" />
               </div>
               <div className="image-grid">
                 <div className="grid-image">
-                  <img src="https://img.freepik.com/free-photo/programmer-working-laptop-office_1150-17626.jpg?semt=ais_hybrid&w=400&q=80" alt="Development" loading="lazy" />
+                  <Image src="https://img.freepik.com/free-photo/programmer-working-laptop-office_1150-17626.jpg?semt=ais_hybrid&w=400&q=80" alt="Development" width={400} height={300} loading="lazy" />
                 </div>
                 <div className="grid-image">
-                  <img src="https://img.freepik.com/free-photo/business-team-meeting_53876-123950.jpg?semt=ais_hybrid&w=400&q=80" alt="Team Meeting" loading="lazy" />
+                  <Image src="https://img.freepik.com/free-photo/business-team-meeting_53876-123950.jpg?semt=ais_hybrid&w=400&q=80" alt="Team Meeting" width={400} height={300} loading="lazy" />
                 </div>
               </div>
             </div>
@@ -220,7 +221,7 @@ export default function AboutContent() {
           <div className="team-grid">
             <div className="team-member">
               <div className="team-member-image">
-                <img src="images/CEO.png" alt="Alex Kariuki - CEO" loading="lazy" />
+                <Image src="/images/CEO.png" alt="Alex Kariuki - CEO" width={300} height={300} loading="lazy" />
               </div>
               <div className="team-member-info">
                 <h3 className="team-member-name">Alex Kariuki</h3>

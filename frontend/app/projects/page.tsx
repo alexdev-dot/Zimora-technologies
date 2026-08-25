@@ -6,6 +6,7 @@ import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -182,7 +183,7 @@ export default function ProjectsPage() {
                 data-category={project.category}
               >
                 <div className="project-image">
-                  <img src={project.image} alt={project.title} loading="lazy" />
+                  <Image src={project.image} alt={project.title} width={600} height={400} loading="lazy" />
                   <div className="project-overlay">
                     <div className="project-actions">
                       <a 

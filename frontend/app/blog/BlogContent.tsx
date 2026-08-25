@@ -6,6 +6,7 @@ import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogPosts } from '@/data/blogPosts';
 
 export default function BlogContent() {
@@ -126,7 +127,7 @@ export default function BlogContent() {
             {featuredPost && activeCategory === 'All Posts' && (
               <article className="blog-post featured">
                 <div className="post-image">
-                  <img src={featuredPost.image} alt={featuredPost.title} loading="lazy" width="800" height="400" />
+                  <Image src={featuredPost.image} alt={featuredPost.title} width="800" height="400" loading="lazy" />
                 </div>
                 <div className="post-content">
                   <div className="post-meta">
@@ -144,7 +145,7 @@ export default function BlogContent() {
             {currentPosts.map((post) => (
               <article key={post.id} className="blog-post">
                 <div className="post-image">
-                  <img src={post.image} alt={post.title} loading="lazy" width="600" height="400" />
+                  <Image src={post.image} alt={post.title} width="600" height="400" loading="lazy" />
                 </div>
                 <div className="post-content">
                   <div className="post-meta">

@@ -3,6 +3,7 @@ import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getRecentBlogPosts } from '@/data/blogPosts';
 
 export default function Home() {
@@ -44,9 +45,11 @@ export default function Home() {
       {/* ABOUT */}
       <section className="about">
         <div className="about-container">
-          <img 
+          <Image 
             src="https://img.freepik.com/free-photo/businesspeople-having-good-time-meeting_1098-1786.jpg?semt=ais_hybrid&w=740&q=80" 
-            alt="Team meeting" 
+            alt="Zimora Technologies team collaborating on digital solutions project" 
+            width={740}
+            height={493}
             loading="lazy" 
           />
           <div>
@@ -101,47 +104,47 @@ export default function Home() {
         <div className="carousel-container">
           <div className="carousel-track">
             <div className="logo-slide">
-              <img src="https://upload.wikimedia.org/wikipedia/en/archive/8/8a/20210807000406%21Equity_Bank_Logo.png" alt="Equity-bank" className="company-logo" loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/en/archive/8/8a/20210807000406%21Equity_Bank_Logo.png" alt="Equity Bank Kenya - Trusted financial partner" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://www.safaricom.co.ke/images/SAF-MAIN-LOGO.png" alt="Safaricom" className="company-logo" loading="lazy" />
+              <Image src="https://www.safaricom.co.ke/images/SAF-MAIN-LOGO.png" alt="Safaricom - Leading telecommunications provider in Kenya" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="/images/Zimora.png" alt="Zimora" className="company-logo" loading="lazy" />
+              <Image src="/images/Zimora.png" alt="Zimora Technologies - Professional IT Solutions Company" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="/assets/images/zetech logo.jpg" alt="Zetech-university" className="company-logo" loading="lazy" />
+              <Image src="/assets/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel" className="company-logo" loading="lazy" />
+              <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel Kenya - Mobile network operator" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://upload.wikimedia.org/wikipedia/en/d/de/KCB_Bank_Kenya_Limited_logo.png" alt="KCB-bank" className="company-logo" loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/en/d/de/KCB_Bank_Kenya_Limited_logo.png" alt="KCB Bank Kenya - Commercial banking services" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://zegetech.com/assets/images/logos/logo-sab.jpg" alt="Sab-Foundation" className="company-logo" loading="lazy" />
+              <Image src="https://zegetech.com/assets/images/logos/logo-sab.jpg" alt="Sab Foundation - Community organization" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             {/* Duplicate logos for seamless loop */}
             <div className="logo-slide">
-              <img src="https://upload.wikimedia.org/wikipedia/en/archive/8/8a/20210807000406%21Equity_Bank_Logo.png" alt="Equity-bank" className="company-logo" loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/en/archive/8/8a/20210807000406%21Equity_Bank_Logo.png" alt="Equity Bank Kenya - Trusted financial partner" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://www.safaricom.co.ke/images/SAF-MAIN-LOGO.png" alt="Safaricom" className="company-logo" loading="lazy" />
+              <Image src="https://www.safaricom.co.ke/images/SAF-MAIN-LOGO.png" alt="Safaricom - Leading telecommunications provider in Kenya" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="/images/Zimora.png" alt="Zimora" className="company-logo" loading="lazy" />
+              <Image src="/images/Zimora.png" alt="Zimora Technologies - Professional IT Solutions Company" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="/assets/images/zetech logo.jpg" alt="Zetech-university" className="company-logo" loading="lazy" />
+              <Image src="/assets/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel" className="company-logo" loading="lazy" />
+              <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel Kenya - Mobile network operator" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://upload.wikimedia.org/wikipedia/en/d/de/KCB_Bank_Kenya_Limited_logo.png" alt="KCB-bank" className="company-logo" loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/en/d/de/KCB_Bank_Kenya_Limited_logo.png" alt="KCB Bank Kenya - Commercial banking services" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <img src="https://zegetech.com/assets/images/logos/logo-sab.jpg" alt="Sab-Foundation" className="company-logo" loading="lazy" />
+              <Image src="https://zegetech.com/assets/images/logos/logo-sab.jpg" alt="Sab Foundation - Community organization" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
           </div>
         </div>
@@ -226,7 +229,7 @@ export default function Home() {
             {recentBlogs.map((blog) => (
               <article key={blog.id} className="blog-card">
                 <div className="blog-card-image">
-                  <img src={blog.image} alt={blog.title} loading="lazy" width="600" height="400" />
+                  <Image src={blog.image} alt={blog.title} width="600" height="400" loading="lazy" />
                 </div>
                 <div className="blog-card-content">
                   <div className="blog-card-meta">

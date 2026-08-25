@@ -1,6 +1,7 @@
 import { blogPosts } from '@/data/blogPosts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import SiteNavigation from '@/components/site-navigation';
 import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
@@ -70,6 +71,43 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       <SiteNavigation />
+      
+      {/* Article Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.description,
+            "image": `https://zimoratech.co.ke${post.image}`,
+            "author": {
+              "@type": "Organization",
+              "name": "Zimora Technologies",
+              "url": "https://zimoratech.co.ke/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zimora Technologies",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://zimoratech.co.ke/images/Zimora.png"
+              },
+              "url": "https://zimoratech.co.ke/"
+            },
+            "datePublished": post.date,
+            "dateModified": post.date,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://zimoratech.co.ke/blog/${params.id}`
+            },
+            "articleSection": post.category,
+            "keywords": `${post.category}, ${post.title}, tech blog Kenya, web development, digital marketing`,
+            "inLanguage": "en-US"
+          })
+        }}
+      />
 
       {/* Blog Post Hero */}
       <section className="blog-post-hero">
@@ -93,7 +131,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="container">
           <div className="blog-post-body">
             <div className="blog-post-image">
-              <img src={post.image} alt={post.title} />
+              <Image src={post.image} alt={post.title} width={800} height={500} />
             </div>
             
             <div className="blog-post-text">
