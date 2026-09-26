@@ -34,14 +34,14 @@ export function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {
   const pathname = usePathname();
 
   return (
-    <aside className="flex h-full w-[268px] shrink-0 flex-col border-r border-[#242424] bg-[#111111] px-4 py-5 text-white">
+    <aside className="flex h-full w-[268px] shrink-0 flex-col border-r border-[#e8e4df] bg-white px-4 py-5 text-[#211d1a]">
       <Link href="/" onClick={onNavigate} className="group mb-10 flex items-center gap-3 px-3 after:hidden">
         <span className="flex size-10 items-center justify-center rounded-[14px] bg-[#ff5a1f] shadow-[0_8px_24px_rgba(255,90,31,0.24)]">
           <img src="/images/Zimora.png" alt="Zimora Technologies" className="h-7 w-auto object-contain brightness-0 invert" />
         </span>
         <span>
           <span className="block font-[family-name:var(--font-zimora-sans)] text-[15px] font-bold tracking-[-0.02em]">Zimora</span>
-          <span className="mt-0.5 block font-[family-name:var(--font-zimora-code)] text-[9px] uppercase tracking-[0.2em] text-white/35">Technologies</span>
+          <span className="mt-0.5 block font-[family-name:var(--font-zimora-code)] text-[9px] uppercase tracking-[0.2em] text-[#8b8179]">Technologies</span>
         </span>
       </Link>
 
@@ -49,20 +49,15 @@ export function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {
         <p className="mb-2 px-3 font-[family-name:var(--font-zimora-code)] text-[9px] font-bold uppercase tracking-[0.22em] text-[#ff7b4b]">Workspace</p>
         {primaryNavigation.map((item) => {
           const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href);
-          return <Link key={item.href} href={item.href} onClick={onNavigate} className={`group flex items-center gap-3 rounded-[10px] px-3 py-3 text-[13px] font-medium transition-colors after:hidden ${isActive ? 'bg-[#ff5a1f] text-white shadow-[0_8px_20px_rgba(255,90,31,0.18)]' : 'text-white/45 hover:bg-white/[0.06] hover:text-white'}`}><NavIcon name={item.icon} /><span>{item.label}</span>{isActive ? <span className="ml-auto size-1.5 rounded-full bg-white/80" /> : null}</Link>;
+          return <Link key={item.href} href={item.href} onClick={onNavigate} className={`group flex items-center gap-3 rounded-[10px] px-3 py-3 text-[13px] font-medium transition-colors after:hidden ${isActive ? 'bg-[#ff5a1f] text-white shadow-[0_8px_20px_rgba(255,90,31,0.18)]' : 'text-[#766d66] hover:bg-[#f8f4f0] hover:text-[#211d1a]'}`}><NavIcon name={item.icon} /><span>{item.label}</span>{isActive ? <span className="ml-auto size-1.5 rounded-full bg-white/80" /> : null}</Link>;
         })}
       </nav>
 
       <nav aria-label="Support navigation" className="mt-9 flex flex-col gap-1">
-        <p className="mb-2 px-3 font-[family-name:var(--font-zimora-code)] text-[9px] font-bold uppercase tracking-[0.22em] text-white/25">Manage</p>
+        <p className="mb-2 px-3 font-[family-name:var(--font-zimora-code)] text-[9px] font-bold uppercase tracking-[0.22em] text-[#a79d95]">Manage</p>
         {secondaryNavigation.map((item) => <Link key={item.href} href={item.href} onClick={onNavigate} className="group flex items-center gap-3 rounded-[10px] px-3 py-3 text-[13px] font-medium text-white/45 transition-colors after:hidden hover:bg-white/[0.06] hover:text-white"><NavIcon name={item.icon} /><span>{item.label}</span></Link>)}
       </nav>
 
-      <div className="mt-auto rounded-[14px] border border-white/[0.08] bg-white/[0.035] p-4">
-        <div className="flex items-center gap-2"><span className="size-2 rounded-full bg-[#58d68d] shadow-[0_0_10px_rgba(88,214,141,0.7)]" /><span className="font-[family-name:var(--font-zimora-code)] text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">System status</span></div>
-        <p className="mt-3 text-[13px] font-semibold text-white/85">All systems operational</p>
-        <p className="mt-1 text-[11px] leading-5 text-white/35">Your admin workspace is ready.</p>
-      </div>
     </aside>
   );
 }
