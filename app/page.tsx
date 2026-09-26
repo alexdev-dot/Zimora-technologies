@@ -113,7 +113,7 @@ export default function Home() {
               <Image src="/images/Zimora.png" alt="Zimora Technologies - Professional IT Solutions Company" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <Image src="/assets/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
+              <Image src="/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
               <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel Kenya - Mobile network operator" className="company-logo" width={200} height={100} loading="lazy" />
@@ -135,7 +135,7 @@ export default function Home() {
               <Image src="/images/Zimora.png" alt="Zimora Technologies - Professional IT Solutions Company" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
-              <Image src="/assets/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
+              <Image src="/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
             </div>
             <div className="logo-slide">
               <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel Kenya - Mobile network operator" className="company-logo" width={200} height={100} loading="lazy" />

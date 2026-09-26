@@ -2,14 +2,14 @@
 
 A professional, modern website for Zimora Technologies - a leading IT solutions company based in Kenya, specializing in web development, mobile app development, digital marketing, and comprehensive technology solutions.
 
-## ?? Website Overview
+## üåê Website Overview
 
 **Live URL:** https://zimoratech.co.ke/  
 **Development Year:** 2026  
 **Company Location:** Ruiru, Kiambu County, Kenya  
 **Contact:** +254 117 411 547 | info@zimoratech.co.ke  
 
-## ?? Table of Contents
+## üìë Table of Contents
 
 - [Features](#-features)
 - [Pages Structure](#-pages-structure)
@@ -25,7 +25,7 @@ A professional, modern website for Zimora Technologies - a leading IT solutions 
 - [Contributing](#-contributing)
 - [License](#-license)
 
-## ? Features
+## ‚ú® Features
 
 ### Core Functionality
 - **Responsive Design:** Fully responsive across desktop, tablet, and mobile devices
@@ -42,9 +42,9 @@ A professional, modern website for Zimora Technologies - a leading IT solutions 
 - **Social Media Integration:** Links to social media platforms
 - **Multi-language Ready:** Structure supports future multi-language implementation
 
-## ?? Pages Structure
+## üìÑ Pages Structure
 
-`
+```
 /
 +-- /                      # Homepage - Hero section, services overview, testimonials
 +-- /about                 # About Us - Company story, mission, vision, team
@@ -55,7 +55,7 @@ A professional, modern website for Zimora Technologies - a leading IT solutions 
 +-- /privacy-policy        # Privacy Policy - Data protection and privacy terms
 +-- /terms-of-service      # Terms of Service - Legal terms and conditions
 +-- /404                   # Custom 404 error page
-`
+```
 
 ### Page Descriptions
 
@@ -106,7 +106,7 @@ A professional, modern website for Zimora Technologies - a leading IT solutions 
 - Social media links
 - Working hours
 
-## ?? Technologies Used
+## üõ† Technologies Used
 
 ### Frontend Framework
 - **Next.js 16.3.2:** React framework with App Router for server-side rendering and static generation
@@ -131,55 +131,58 @@ A professional, modern website for Zimora Technologies - a leading IT solutions 
 - **Twitter Cards:** Twitter sharing optimization
 - **Google Search Console:** Verification and monitoring
 
-## ?? Project Structure
+## üìÅ Project Structure
 
-`
-frontend/
+```
+/
 +-- app/
-¶   +-- layout.tsx              # Root layout with metadata and global styles
-¶   +-- page.tsx                # Homepage component
-¶   +-- globals.css             # Global styles and custom fonts
-¶   +-- not-found.tsx           # Custom 404 error page
-¶   +-- about/
-¶   ¶   +-- layout.tsx          # About page layout with metadata
-¶   ¶   +-- page.tsx            # About page content
-¶   +-- services/
-¶   ¶   +-- layout.tsx          # Services page layout with metadata
-¶   ¶   +-- page.tsx            # Services page content
-¶   +-- projects/
-¶   ¶   +-- layout.tsx          # Projects page layout with metadata
-¶   ¶   +-- page.tsx            # Projects page content
-¶   +-- blog/
-¶   ¶   +-- layout.tsx          # Blog page layout with metadata
-¶   ¶   +-- page.tsx            # Blog page content
-¶   +-- contact/
-¶   ¶   +-- layout.tsx          # Contact page layout with metadata
-¶   ¶   +-- page.tsx            # Contact page content
-¶   +-- privacy-policy/
-¶   ¶   +-- layout.tsx          # Privacy policy layout with metadata
-¶   ¶   +-- page.tsx            # Privacy policy content
-¶   +-- terms-of-service/
-¶   ¶   +-- layout.tsx          # Terms of service layout with metadata
-¶   ¶   +-- page.tsx            # Terms of service content
-¶   +-- sitemap.ts              # Dynamic sitemap generation
-¶   +-- favicon/                # Favicon files for various platforms
+|   +-- layout.tsx              # Root layout with metadata and global styles
+|   +-- page.tsx                # Homepage component
+|   +-- globals.css             # Global styles and custom fonts
+|   +-- not-found.tsx           # Custom 404 error page
+|   +-- about/
+|   |   +-- layout.tsx          # About page layout with metadata
+|   |   +-- page.tsx            # About page content
+|   +-- services/
+|   |   +-- layout.tsx          # Services page layout with metadata
+|   |   +-- page.tsx            # Services page content
+|   +-- projects/
+|   |   +-- layout.tsx          # Projects page layout with metadata
+|   |   +-- page.tsx            # Projects page content
+|   +-- blog/
+|   |   +-- layout.tsx          # Blog page layout with metadata
+|   |   +-- page.tsx            # Blog page content
+|   +-- contact/
+|   |   +-- layout.tsx          # Contact page layout with metadata
+|   |   +-- page.tsx            # Contact page content
+|   +-- privacy-policy/
+|   |   +-- layout.tsx          # Privacy policy layout with metadata
+|   |   +-- page.tsx            # Privacy policy content
+|   +-- terms-of-service/
+|   |   +-- layout.tsx          # Terms of service layout with metadata
+|   |   +-- page.tsx            # Terms of service content
+|   +-- sitemap.ts              # Dynamic sitemap generation
+|   +-- favicon/                # Favicon files for various platforms
 +-- components/
-¶   +-- site-navigation.tsx     # Navigation component with mobile menu
-¶   +-- site-footer.tsx         # Footer component with newsletter
-¶   +-- chatbot.tsx             # AI chatbot component
-¶   +-- whatsapp-button.tsx     # WhatsApp floating button
+|   +-- site-navigation.tsx     # Navigation component with mobile menu
+|   +-- site-footer.tsx         # Footer component with newsletter
+|   +-- chatbot.tsx             # AI chatbot component
+|   +-- whatsapp-button.tsx     # WhatsApp floating button
 +-- public/
-¶   +-- images/                 # Static images (logo, CEO, company)
-¶   +-- blog-images/            # Blog post images
-¶   +-- project-images/         # Project showcase images
-¶   +-- fonts/                  # Custom font files
+|   +-- images/                 # Static images (logo, CEO, company)
+|   +-- blog-images/            # Blog post images
+|   +-- project-images/         # Project showcase images
+|   +-- fonts/                  # Custom font files
++-- data/                       # Data files and content
 +-- package.json                # Dependencies and scripts
 +-- tsconfig.json               # TypeScript configuration
 +-- next.config.ts              # Next.js configuration
++-- eslint.config.mjs           # ESLint configuration
++-- postcss.config.mjs          # PostCSS configuration
 +-- README.md                   # This file
-`
+```
 
-## ?? Key Components
+## üéØ Key Components
 
 ### Navigation (site-navigation.tsx)
 - Sticky header with smooth scroll
@@ -209,7 +212,7 @@ frontend/
 - Pre-filled message
 - Direct contact integration
 
-## ?? SEO Implementation
+## üîç SEO Implementation
 
 ### Meta Tags
 - Title tags optimized for each page using Next.js Metadata API
@@ -248,7 +251,7 @@ frontend/
 - Semantic HTML structure
 - Favicon with multiple sizes (16x16, 32x32, 180x180)
 
-## ? Performance Optimizations
+## ‚ö° Performance Optimizations
 
 ### Loading Performance
 - Static Site Generation (SSG) for all pages
@@ -273,7 +276,7 @@ frontend/
 - Automatic compression
 - Optimized bundle sizes
 
-## ?? Installation & Setup
+## üöÄ Installation & Setup
 
 ### Prerequisites
 - Node.js 18+ installed
@@ -282,13 +285,13 @@ frontend/
 
 ### Local Development
 
-1. **Navigate to the frontend directory**
-   `ash
-   cd frontend
-   `
+1. **Navigate to the project directory**
+   ```bash
+   cd Zimora-technologies
+   ```
 
 2. **Install dependencies**
-   `ash
+   ```bash
    npm install
    # or
    yarn install
@@ -296,10 +299,10 @@ frontend/
    pnpm install
    # or
    bun install
-   `
+   ```
 
 3. **Run the development server**
-   `ash
+   ```bash
    npm run dev
    # or
    yarn dev
@@ -307,14 +310,14 @@ frontend/
    pnpm dev
    # or
    bun dev
-   `
+   ```
 
 4. **Open in browser**
    - Navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Build for Production
 
-`ash
+```bash
 npm run build
 # or
 yarn build
@@ -322,11 +325,11 @@ yarn build
 pnpm build
 # or
 bun build
-`
+```
 
 ### Start Production Server
 
-`ash
+```bash
 npm start
 # or
 yarn start
@@ -334,9 +337,9 @@ yarn start
 pnpm start
 # or
 bun start
-`
+```
 
-## ?? Configuration
+## ‚öôÔ∏è Configuration
 
 ### Environment Variables
 No environment variables required for this static site.
@@ -347,35 +350,35 @@ No environment variables required for this static site.
 Edit contact details in components/site-footer.tsx and components/site-navigation.tsx.
 
 #### Update Colors
-Modify CSS variables in pp/globals.css:
-`css
+Modify CSS variables in app/globals.css:
+```css
 :root {
   --primary-color: #ff4d00;
   --secondary-color: #1a1a2e;
   --text-color: #333;
   /* ... */
 }
-`
+```
 
 #### Update Logo
 Replace public/images/Zimora.png with your company logo.
 
 #### Update Google Analytics
-Add your Google Analytics tracking ID in pp/layout.tsx metadata.
+Add your Google Analytics tracking ID in app/layout.tsx metadata.
 
 #### Update Metadata
 Edit metadata in each page's layout.tsx file to update titles, descriptions, and SEO tags.
 
-## ?? Browser Support
+## üåê Browser Support
 
 | Browser | Version | Support |
 |---------|---------|---------|
-| Chrome | 90+ | ? Full |
-| Firefox | 88+ | ? Full |
-| Safari | 14+ | ? Full |
-| Edge | 90+ | ? Full |
-| Opera | 76+ | ? Full |
-| IE 11 | - | ? Not supported |
+| Chrome | 90+ | ‚úÖ Full |
+| Firefox | 88+ | ‚úÖ Full |
+| Safari | 14+ | ‚úÖ Full |
+| Edge | 90+ | ‚úÖ Full |
+| Opera | 76+ | ‚úÖ Full |
+| IE 11 | - | ‚ùå Not supported |
 
 ### Mobile Browsers
 - iOS Safari 14+
@@ -383,33 +386,28 @@ Edit metadata in each page's layout.tsx file to update titles, descriptions, and
 - Samsung Internet 14+
 - Firefox Mobile 88+
 
-## ?? Deployment
+## üì¶ Deployment
 
 ### Vercel Deployment (Recommended)
 1. Connect your GitHub repository to Vercel
 2. Configure build settings:
    - **Framework Preset:** Next.js
-   - **Build Command:** 
-pm run build
+   - **Build Command:** npm run build
    - **Output Directory:** .next
 3. Deploy automatically on push
 
 ### Netlify Deployment
 1. Connect your GitHub repository to Netlify
 2. Set build settings:
-   - **Build Command:** 
-pm run build
+   - **Build Command:** npm run build
    - **Publish Directory:** .next
 3. Deploy automatically on push
 
 ### Traditional Hosting
-1. Build the project: 
-pm run build
+1. Build the project: npm run build
 2. Upload the .next folder and package.json to your hosting provider
-3. Install dependencies on server: 
-pm install --production
-4. Start the server: 
-pm start
+3. Install dependencies on server: npm install --production
+4. Start the server: npm start
 5. Configure domain settings
 
 ### Domain Configuration
@@ -418,7 +416,7 @@ pm start
 - Submit new sitemap to Google Search Console
 - Update any hardcoded URLs in components
 
-## ?? Security Considerations
+## üîí Security Considerations
 
 - HTTPS enabled for production
 - Content Security Policy (CSP) headers recommended
@@ -427,7 +425,7 @@ pm start
 - Regular security audits recommended
 - Environment variables for sensitive data
 
-## ?? Contributing
+## ü§ù Contributing
 
 Contributions are welcome! Please follow these guidelines:
 
@@ -445,7 +443,7 @@ Contributions are welcome! Please follow these guidelines:
 - Test across browsers
 - Follow Next.js conventions
 
-## ?? Maintenance
+## üîÑ Maintenance
 
 ### Regular Updates
 - Update copyright year annually
@@ -461,14 +459,14 @@ Contributions are welcome! Please follow these guidelines:
 - Testimonials: As received
 - Team information: As changes occur
 
-## ?? Support
+## üìû Support
 
 For support and inquiries:
 - **Email:** info@zimoratech.co.ke
 - **Phone:** +254 117 411 547
 - **Website:** https://zimoratech.co.ke
 
-## ?? License
+## üìÑ License
 
 This project is proprietary software owned by Zimora Technologies. All rights reserved.
 
