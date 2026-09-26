@@ -21,23 +21,31 @@ export default function Home() {
           <div className="index-hero-content">
             <div className="index-hero-subtitle">
               <span className="index-hero-line"></span>
-              WELCOME TO ZIMORA
+              NAIROBI · DIGITAL PARTNERS
             </div>
             <h1 className="index-hero-title">
-              Elevate Your Business with<br />
-              <span className="text-primary">Smart Digital Solutions</span>
+              We make ambitious ideas<br />
+              <span className="text-primary">impossible to ignore.</span>
             </h1>
             <p className="index-hero-description">
-              Zimora Technologies helps startups and growing businesses build powerful websites, scalable applications and digital systems that drives real results.
+              Zimora turns complex business challenges into clear, high-performing digital products, brands, and systems built for what comes next.
             </p>
             <div className="index-hero-buttons">
-              <Link href="/services">
-                <button className="btn-primary">GET STARTED</button>
-              </Link>
-              <Link href="/contact">
-                <button className="btn-outline">REQUEST A QUOTE</button>
-              </Link>
+              <Link href="/services" className="btn-primary">Explore our work <span aria-hidden="true">↗</span></Link>
+              <Link href="/contact" className="btn-outline">Start a conversation</Link>
             </div>
+            <div className="index-hero-proof">
+              <span className="index-hero-proof-dot"></span>
+              <span>Currently building for bold businesses</span>
+            </div>
+          </div>
+          <div className="index-hero-signal" aria-label="Zimora digital systems signal">
+            <div className="index-hero-signal-orbit index-hero-signal-orbit-one"></div>
+            <div className="index-hero-signal-orbit index-hero-signal-orbit-two"></div>
+            <div className="index-hero-signal-core">Z</div>
+            <div className="index-hero-signal-label index-hero-signal-label-top">STRATEGY <span>01</span></div>
+            <div className="index-hero-signal-label index-hero-signal-label-right">SYSTEMS <span>02</span></div>
+            <div className="index-hero-signal-label index-hero-signal-label-bottom">MOMENTUM <span>03</span></div>
           </div>
         </div>
       </section>
