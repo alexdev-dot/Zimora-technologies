@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Admin header and sidebar use the same application typography as public pages. */
+.dashboard-header,.dashboard-sidebar{font-family:var(--font-primary);font-size:16px !important;line-height:1.5 !important}
+.dashboard-header *,.dashboard-sidebar *{font-family:inherit}
+.dashboard-sidebar .dash-nav a{font-size:15px;line-height:1.5}
+.dashboard-sidebar .dash-nav-label{font-size:11px;line-height:1.4}
+.dashboard-sidebar .dash-brand-panel{font-size:12px;line-height:1.4}
+.dashboard-header .dash-search input,.dashboard-header .dash-search kbd,.dashboard-header .dash-profile strong,.dashboard-header .dash-profile span{font-family:var(--font-primary);font-size:15px;line-height:1.4}
+.dashboard-header .dash-profile span{font-size:13px}
+
 /* Website administration sidebar */
 .dashboard-sidebar{padding-left:4px !important;padding-right:8px !important}
 .dashboard-sidebar .dash-brand-row{padding-left:4px !important;padding-right:4px !important}
