@@ -1034,7 +1034,10 @@ nav a.active {
 /* Sidebar logo refinement */
 .dashboard-sidebar .dash-brand-logo{width:142px;height:48px;transform:none;object-fit:contain;object-position:left center}
 .dashboard-sidebar .dash-brand{gap:2px}
-.dashboard-sidebar .dash-brand-panel{font-size:10px;letter-spacing:.1em}
+.dashboard-sidebar .dash-brand-panel{font-size:11px;letter-spacing:.1em}
+.dashboard-sidebar .dash-nav a{font-size:15px;line-height:1.45}
+.dashboard-sidebar .dash-nav-label{font-size:11px}
+.dashboard-sidebar .dash-nav a svg{width:19px;height:19px}
 .dashboard-sidebar.collapsed .dash-brand{width:38px;height:38px;padding:0;align-items:center;justify-content:center;overflow:hidden;gap:0}
 .dashboard-sidebar.collapsed .dash-brand-logo{width:38px !important;height:38px !important;object-fit:contain;object-position:center;transform:none}
 
