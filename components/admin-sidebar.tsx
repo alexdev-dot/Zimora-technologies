@@ -31,11 +31,6 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
           })}
         </div>)}
       </nav>
-      <div className="dash-account">
-        <Image className="dash-account-avatar" src="/images/CEO.png" alt="Alex Kariuki" width={36} height={36} />
-        <div className="dash-account-copy"><strong>Alex Kariuki</strong><span>Administrator</span></div>
-        <span className="dash-account-more" aria-hidden="true">•••</span>
-      </div>
     </aside>
   );
 }
