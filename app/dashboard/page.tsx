@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <main className="dashboard-shell">
-      <AdminSidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed((value) => !value)} />
+      <AdminSidebar collapsed={sidebarCollapsed} />
 
       <section className="dashboard-content">
         <AdminHeader onToggleSidebar={() => setSidebarCollapsed((value) => !value)} />

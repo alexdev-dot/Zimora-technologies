@@ -3,17 +3,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart3, BriefcaseBusiness, ChartNoAxesCombined, FileText, FolderKanban, ImageIcon, LayoutDashboard, ReceiptText, Send, Settings, Users, type LucideIcon } from 'lucide-react';
+import { BarChart3, ChartNoAxesCombined, FileText, FolderKanban, ImageIcon, LayoutDashboard, ReceiptText, Send, Settings, Users, type LucideIcon } from 'lucide-react';
 
-const navGroups: { label: string; items: [LucideIcon, string, string][] }[] = [
-  { label: 'Overview', items: [[LayoutDashboard, 'Dashboard', '/dashboard']] },
-  { label: 'Website', items: [[FolderKanban, 'Projects', '/projects'], [Users, 'Clients', '/clients'], [ChartNoAxesCombined, 'Services', '/services'], [ImageIcon, 'Media', '/media']] },
-  { label: 'Operations', items: [[Send, 'Leads', '/leads'], [ReceiptText, 'Invoices', '/invoices'], [BarChart3, 'Reports', '/reports']] },
-  { label: 'Content', items: [[FileText, 'Blog', '/blog']] },
-  { label: 'System', items: [[Settings, 'Settings', '/settings']] },
+type NavItem = { icon: LucideIcon; label: string; href: string };
+type NavGroup = { label: string; items: NavItem[] };
+
+const navGroups: NavGroup[] = [
+  { label: 'Overview', items: [{ icon: LayoutDashboard, label: 'Dashboard', href: '/dashboard' }] },
+  { label: 'Website', items: [{ icon: FolderKanban, label: 'Projects', href: '/projects' }, { icon: Users, label: 'Clients', href: '/clients' }, { icon: ChartNoAxesCombined, label: 'Services', href: '/services' }, { icon: ImageIcon, label: 'Media', href: '/media' }] },
+  { label: 'Operations', items: [{ icon: Send, label: 'Leads', href: '/leads' }, { icon: ReceiptText, label: 'Invoices', href: '/invoices' }, { icon: BarChart3, label: 'Reports', href: '/reports' }] },
+  { label: 'Content', items: [{ icon: FileText, label: 'Blog', href: '/blog' }] },
+  { label: 'System', items: [{ icon: Settings, label: 'Settings', href: '/settings' }] },
 ];
 
-export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
+export function AdminSidebar({ collapsed }: { collapsed: boolean }) {
   const pathname = usePathname();
 
   return (
@@ -24,12 +27,12 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
           <span className="dash-brand-panel">Admin Panel</span>
         </Link>
       </div>
-      <nav className="dash-nav" aria-label="Main navigation">
+      <nav className="dash-nav" aria-label="Admin navigation">
         {navGroups.map((group) => <div className="dash-nav-group" key={group.label}>
           <span className="dash-nav-label">{group.label}</span>
-          {group.items.map(([Icon, label, href]) => {
+          {group.items.map(({ icon: Icon, label, href }) => {
             const active = href === '/dashboard' ? pathname === href : pathname.startsWith(href);
-            return <Link key={label} title={collapsed ? label : undefined} className={active ? 'active' : ''} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
+            return <Link key={href} title={collapsed ? label : undefined} className={active ? 'active' : ''} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
           })}
         </div>)}
       </nav>
