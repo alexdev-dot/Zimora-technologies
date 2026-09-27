@@ -1,17 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
 
 const navItems = [
-  ['⌂', 'Dashboard'],
-  ['▣', 'Projects'],
-  ['♧', 'Clients'],
-  ['⌘', 'Services'],
-  ['⌁', 'Leads'],
-  ['▤', 'Invoices'],
-  ['▧', 'Blogs'],
-  ['▥', 'Reports'],
+  ['⌂', 'Dashboard', '/dashboard'],
+  ['▣', 'Projects', '/projects'],
+  ['♧', 'Clients', '/clients'],
+  ['⌘', 'Services', '/services'],
+  ['⌁', 'Leads', '/leads'],
+  ['▤', 'Invoices', '/invoices'],
+  ['▧', 'Blogs', '/blog'],
+  ['▥', 'Reports', '/reports'],
 ];
 
 const projects = [
@@ -37,7 +37,6 @@ function StatCard({ icon, label, value, trend, tone }: { icon: string; label: st
 }
 
 export default function Home() {
-  const [active, setActive] = useState('Dashboard');
   return (
     <main className="dashboard-shell">
       <aside className="dashboard-sidebar">
@@ -46,7 +45,7 @@ export default function Home() {
           <div><strong>Zimora Tech</strong><span>Build · Innovate · Grow</span></div>
         </div>
         <nav className="dash-nav" aria-label="Main navigation">
-          {navItems.map(([icon, label]) => <button key={label} className={active === label ? 'active' : ''} onClick={() => setActive(label)}><span>{icon}</span>{label}</button>)}
+          {navItems.map(([icon, label, href]) => <Link key={label} className={label === 'Dashboard' ? 'active' : ''} href={href}><span>{icon}</span>{label}</Link>)}
         </nav>
         <p className="dash-section-label">SETTINGS</p>
         <nav className="dash-nav dash-settings">
