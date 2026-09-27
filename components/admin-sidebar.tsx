@@ -17,8 +17,9 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
   return (
     <aside className={`dashboard-sidebar${collapsed ? ' collapsed' : ''}`}>
       <div className="dash-brand-row"><Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies dashboard"><Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority /></Link></div>
+      <div className="dash-nav-label">Workspace</div>
       <nav className="dash-nav" aria-label="Main navigation">
-        {navItems.map(([Icon, label, href]) => <Link key={label} className={label === 'Dashboard' ? 'active' : ''} href={href}><Icon aria-hidden="true" /><span>{label}</span></Link>)}
+        {navItems.map(([Icon, label, href]) => <Link key={label} title={collapsed ? label : undefined} className={label === 'Dashboard' ? 'active' : ''} href={href}><Icon aria-hidden="true" /><span>{label}</span></Link>)}
       </nav>
     </aside>
   );
