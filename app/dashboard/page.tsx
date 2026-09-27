@@ -1,18 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-
-const navItems = [
-  ['⌂', 'Dashboard', '/dashboard'],
-  ['▣', 'Projects', '/projects'],
-  ['♧', 'Clients', '/clients'],
-  ['⌘', 'Services', '/services'],
-  ['⌁', 'Leads', '/leads'],
-  ['▤', 'Invoices', '/invoices'],
-  ['▧', 'Blogs', '/blog'],
-  ['▥', 'Reports', '/reports'],
-];
+import AdminHeader from '@/components/admin-header';
+import AdminSidebar from '@/components/admin-sidebar';
 
 const projects = [
   ['Zimora POS (SaaS)', 'Zimora POS', 'In Progress', 'Oct 15, 2025', '/project-images/ShopEaseKenya.png'],
@@ -39,28 +29,10 @@ function StatCard({ icon, label, value, trend, tone }: { icon: string; label: st
 export default function Home() {
   return (
     <main className="dashboard-shell">
-      <aside className="dashboard-sidebar">
-        <div className="dash-brand">
-          <div className="dash-brand-mark">Z</div>
-          <div><strong>Zimora Tech</strong><span>Build · Innovate · Grow</span></div>
-        </div>
-        <nav className="dash-nav" aria-label="Main navigation">
-          {navItems.map(([icon, label, href]) => <Link key={label} className={label === 'Dashboard' ? 'active' : ''} href={href}><span>{icon}</span>{label}</Link>)}
-        </nav>
-        <p className="dash-section-label">SETTINGS</p>
-        <nav className="dash-nav dash-settings">
-          <button><span>♙</span>Team</button><button><span>⚙</span>Settings</button>
-        </nav>
-        <div className="dash-sidebar-promo">
-          <div className="promo-art">⌁</div><strong>Let&apos;s build something great together!</strong><p>Turn your ideas into powerful digital solutions.</p><button>Get in Touch →</button>
-        </div>
-      </aside>
+      <AdminSidebar />
 
       <section className="dashboard-content">
-        <header className="dashboard-header">
-          <div className="dash-search"><span>⌕</span><input aria-label="Search" placeholder="Search projects, clients, or anything..." /><kbd>⌘ K</kbd></div>
-          <div className="dash-header-actions"><button className="dash-bell" aria-label="Notifications">♧<i>1</i></button><div className="dash-profile"><Image src="/images/CEO.png" alt="Alex Kariuki Macharia" width={38} height={38} /><div><strong>Alex Kariuki Macharia</strong><span>Administrator</span></div><b>⌄</b></div></div>
-        </header>
+        <AdminHeader />
 
         <div className="dashboard-main">
           <div className="dashboard-heading"><div><p>Welcome back,</p><h1>Alex Kariuki Macharia <span>👋</span></h1><span>Here&apos;s what&apos;s happening with your business today.</span></div><div className="dash-date">▣ <div><strong>Saturday, 27 September 2025</strong><small>Keep building. Great things take time.</small></div></div></div>
