@@ -27,7 +27,7 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
           <span className="dash-nav-label">{group.label}</span>
           {group.items.map(([Icon, label, href]) => {
             const active = href === '/dashboard' ? pathname === href : pathname.startsWith(href);
-            return <Link key={label} title={collapsed ? label : undefined} className={active ? 'active' : ''} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
+            return <Link key={label} title={collapsed ? label : undefined} className={active ? 'active' : ''} style={{ paddingLeft: 2, paddingRight: 6, gap: 8 }} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
           })}
         </div>)}
       </nav>
