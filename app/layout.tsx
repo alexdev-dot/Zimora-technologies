@@ -3,7 +3,7 @@ import './globals.css';
 import CookieConsent from '@/components/cookie-consent';
 
 export const metadata: Metadata = {
-  title: 'Zimora Technologies | Professional IT Solutions & Web Development Services',
+  title: 'Zimora Tech | Admin Dashboard',
   description: 'Zimora Technologies offers professional IT solutions, web development, digital marketing, and cybersecurity services. Transform your business with our expert technology solutions.',
   keywords: 'IT solutions, web development, digital marketing, cybersecurity, cloud computing, software development, Zimora Technologies',
   authors: [{ name: 'Zimora Technologies' }],

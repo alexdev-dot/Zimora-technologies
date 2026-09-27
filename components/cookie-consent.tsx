@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export default function CookieConsent() {
+  const pathname = usePathname();
   const [showBanner, setShowBanner] = useState(false);
   const [consentGiven, setConsentGiven] = useState(false);
 
@@ -41,8 +43,8 @@ export default function CookieConsent() {
     setShowBanner(false);
   };
 
-  if (!showBanner || consentGiven) {
-    return null;
+  if (pathname.startsWith('/dashboard') || !showBanner || consentGiven) {
+  return null;
   }
 
   return (

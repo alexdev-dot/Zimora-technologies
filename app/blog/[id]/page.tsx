@@ -8,13 +8,14 @@ import Chatbot from '@/components/chatbot';
 import WhatsAppButton from '@/components/whatsapp-button';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = blogPosts.find(p => p.id === parseInt(params.id));
+  const { id } = await params;
+  const post = blogPosts.find(p => p.id === parseInt(id));
   
   if (!post) {
     return {
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://zimoratech.co.ke/blog/${params.id}`,
+      url: `https://zimoratech.co.ke/blog/${id}`,
       type: 'article',
       images: [
         {
@@ -49,8 +50,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find(p => p.id === parseInt(params.id));
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { id } = await params;
+  const post = blogPosts.find(p => p.id === parseInt(id));
 
   if (!post) {
     return (
@@ -100,7 +102,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             "dateModified": post.date,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://zimoratech.co.ke/blog/${params.id}`
+              "@id": `https://zimoratech.co.ke/blog/${id}`
             },
             "articleSection": post.category,
             "keywords": `${post.category}, ${post.title}, tech blog Kenya, web development, digital marketing`,

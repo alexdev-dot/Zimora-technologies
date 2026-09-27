@@ -12,19 +12,8 @@ export default function AdminLogin() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    setError('');
-
-    // Simulate login process - replace with actual authentication logic
-    setTimeout(() => {
-      if (email === 'admin@zimoratech.co.ke' && password === 'admin123') {
-        // Successful login - redirect to admin dashboard
-        window.location.href = '/admin/dashboard';
-      } else {
-        setError('Invalid email or password');
-        setIsLoading(false);
-      }
-    }, 1000);
+    setError('Authentication is not configured yet. Connect an authentication provider before enabling admin sign-in.');
+    setIsLoading(false);
   };
 
   return (
@@ -102,8 +91,8 @@ export default function AdminLogin() {
                 <input type="checkbox" />
                 <span>Remember me</span>
               </label>
-              <Link href="/forgot-password" className="forgot-password">
-                Forgot password?
+              <Link href="/contact" className="forgot-password">
+                Contact administrator
               </Link>
             </div>
 
