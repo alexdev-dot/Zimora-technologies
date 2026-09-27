@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { BarChart3, BriefcaseBusiness, ChartNoAxesCombined, FileText, LayoutDashboard, ReceiptText, Send, Users, type LucideIcon } from 'lucide-react';
 
 const navItems: [LucideIcon, string, string][] = [
@@ -14,12 +17,25 @@ const navItems: [LucideIcon, string, string][] = [
 ];
 
 export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
+  const pathname = usePathname();
+
   return (
     <aside className={`dashboard-sidebar${collapsed ? ' collapsed' : ''}`}>
-      <div className="dash-brand-row"><Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies dashboard"><Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority /></Link></div>
+      <div className="dash-brand-row">
+        <Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies dashboard">
+          <Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority />
+        </Link>
+      </div>
       <nav className="dash-nav" aria-label="Main navigation">
-        {navItems.map(([Icon, label, href]) => <Link key={label} title={collapsed ? label : undefined} className={label === 'Dashboard' ? 'active' : ''} href={href}><Icon aria-hidden="true" /><span>{label}</span></Link>)}
+        {navItems.map(([Icon, label, href]) => {
+          const active = href === '/dashboard' ? pathname === href : pathname.startsWith(href);
+          return <Link key={label} title={collapsed ? label : undefined} className={active ? 'active' : ''} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
+        })}
       </nav>
+      <div className="dash-sidebar-footer">
+        <span className="dash-sidebar-footer-dot" aria-hidden="true" />
+        <span>Admin workspace</span>
+      </div>
     </aside>
   );
 }
