@@ -46,6 +46,7 @@ export function AdminSidebar({ collapsed, isMobile, isMobileOpen, onMobileClose 
         <div className="dash-brand-row">
           <Link className="dash-brand" href="/admin/dashboard" aria-label="Zimora Technologies admin panel" onClick={handleNavClick}>
             <Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority />
+            <span className="dash-brand-panel">Zimora Admin Panel</span>
           </Link>
         </div>
         <nav className="dash-nav" aria-label="Admin navigation">
