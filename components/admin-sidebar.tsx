@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,9 +10,11 @@ const navItems = [
 ];
 
 export function AdminSidebar() {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
-    <aside className="dashboard-sidebar">
-      <Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies dashboard"><Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority /></Link>
+    <aside className={`dashboard-sidebar${collapsed ? ' collapsed' : ''}`}>
+      <div className="dash-brand-row"><Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies dashboard"><Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority /></Link><button className="sidebar-collapse" onClick={() => setCollapsed((value) => !value)} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-expanded={!collapsed}>{collapsed ? '›' : '‹'}</button></div>
       <nav className="dash-nav" aria-label="Main navigation">
         {navItems.map(([icon, label, href]) => <Link key={label} className={label === 'Dashboard' ? 'active' : ''} href={href}><span>{icon}</span>{label}</Link>)}
       </nav>
