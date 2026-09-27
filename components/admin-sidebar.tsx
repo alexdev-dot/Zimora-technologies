@@ -18,8 +18,9 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
   return (
     <aside className={`dashboard-sidebar${collapsed ? ' collapsed' : ''}`}>
       <div className="dash-brand-row">
-        <Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies dashboard">
+        <Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies admin panel">
           <Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority />
+          <span className="dash-brand-panel">Admin Panel</span>
         </Link>
       </div>
       <nav className="dash-nav" aria-label="Main navigation">
