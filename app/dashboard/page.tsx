@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import AdminHeader from '@/components/admin-header';
 import AdminSidebar from '@/components/admin-sidebar';
@@ -27,12 +28,14 @@ function StatCard({ icon, label, value, trend, tone }: { icon: string; label: st
 }
 
 export default function Home() {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
   return (
     <main className="dashboard-shell">
-      <AdminSidebar />
+      <AdminSidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed((value) => !value)} />
 
       <section className="dashboard-content">
-        <AdminHeader />
+        <AdminHeader onToggleSidebar={() => setSidebarCollapsed((value) => !value)} />
 
         <div className="dashboard-main">
           <div className="dashboard-heading"><div><p>Welcome back,</p><h1>Alex Kariuki Macharia <span>👋</span></h1><span>Here&apos;s what&apos;s happening with your business today.</span></div><div className="dash-date">▣ <div><strong>Saturday, 27 September 2025</strong><small>Keep building. Great things take time.</small></div></div></div>
