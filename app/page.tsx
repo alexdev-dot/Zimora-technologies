@@ -1,83 +1,262 @@
-'use client';
-
+import SiteNavigation from '@/components/site-navigation';
+import SiteFooter from '@/components/site-footer';
+import Chatbot from '@/components/chatbot';
+import WhatsAppButton from '@/components/whatsapp-button';
+import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
-
-const navItems = [
-  ['⌂', 'Dashboard'],
-  ['▣', 'Projects'],
-  ['♧', 'Clients'],
-  ['⌘', 'Services'],
-  ['⌁', 'Leads'],
-  ['▤', 'Invoices'],
-  ['▧', 'Blogs'],
-  ['▥', 'Reports'],
-];
-
-const projects = [
-  ['Zimora POS (SaaS)', 'Zimora POS', 'In Progress', 'Oct 15, 2025', '/project-images/ShopEaseKenya.png'],
-  ['Mukurinweini Technical Website', 'Mukurinweini Technical', 'Completed', 'Sep 20, 2025', '/project-images/Haven Homes.png'],
-  ['Electroplanet Ruiru', 'Electroplanet', 'In Progress', 'Oct 5, 2025', '/project-images/Bite Flow.png'],
-  ['Lynn Caris Palette', 'Lynn Caris', 'Planning', 'Oct 25, 2025', '/project-images/Groomers.png'],
-  ['JCM Church Website', 'JCM Church', 'Completed', 'Sep 12, 2025', '/project-images/Zetech-event system.png'],
-];
-
-function StatCard({ icon, label, value, trend, tone }: { icon: string; label: string; value: string; trend: string; tone: string }) {
-  return (
-    <article className="dash-stat-card">
-      <div className={`dash-icon ${tone}`}>{icon}</div>
-      <div>
-        <p className="dash-muted">{label}</p>
-        <strong>{value}</strong>
-        <p className="dash-trend">↑ {trend}</p>
-        <small>vs last month</small>
-      </div>
-    </article>
-  );
-}
+import { getRecentBlogPosts } from '@/data/blogPosts';
 
 export default function Home() {
-  const [active, setActive] = useState('Dashboard');
+  const recentBlogs = getRecentBlogPosts(3);
   return (
-    <main className="dashboard-shell">
-      <aside className="dashboard-sidebar">
-        <div className="dash-brand">
-          <div className="dash-brand-mark">Z</div>
-          <div><strong>Zimora Tech</strong><span>Build · Innovate · Grow</span></div>
+    <>
+      <SiteNavigation />
+
+      {/* HERO */}
+      <section className="index-hero">
+        <div className="index-hero-background">
+          <div className="index-hero-overlay"></div>
         </div>
-        <nav className="dash-nav" aria-label="Main navigation">
-          {navItems.map(([icon, label]) => <button key={label} className={active === label ? 'active' : ''} onClick={() => setActive(label)}><span>{icon}</span>{label}</button>)}
-        </nav>
-        <p className="dash-section-label">SETTINGS</p>
-        <nav className="dash-nav dash-settings">
-          <button><span>♙</span>Team</button><button><span>⚙</span>Settings</button>
-        </nav>
-        <div className="dash-sidebar-promo">
-          <div className="promo-art">⌁</div><strong>Let&apos;s build something great together!</strong><p>Turn your ideas into powerful digital solutions.</p><button>Get in Touch →</button>
-        </div>
-      </aside>
-
-      <section className="dashboard-content">
-        <header className="dashboard-header">
-          <div className="dash-search"><span>⌕</span><input aria-label="Search" placeholder="Search projects, clients, or anything..." /><kbd>⌘ K</kbd></div>
-          <div className="dash-header-actions"><button className="dash-bell" aria-label="Notifications">♧<i>1</i></button><div className="dash-profile"><Image src="/images/CEO.png" alt="Alex Kariuki Macharia" width={38} height={38} /><div><strong>Alex Kariuki Macharia</strong><span>Administrator</span></div><b>⌄</b></div></div>
-        </header>
-
-        <div className="dashboard-main">
-          <div className="dashboard-heading"><div><p>Welcome back,</p><h1>Alex Kariuki Macharia <span>👋</span></h1><span>Here&apos;s what&apos;s happening with your business today.</span></div><div className="dash-date">▣ <div><strong>Saturday, 27 September 2025</strong><small>Keep building. Great things take time.</small></div></div></div>
-          <div className="dash-grid dash-stats"><StatCard icon="▣" label="Total Projects" value="12" trend="20%" tone="blue" /><StatCard icon="♧" label="Active Clients" value="8" trend="14%" tone="green" /><StatCard icon="$" label="Total Invoices" value="KSh 245,000" trend="32%" tone="purple" /><StatCard icon="◎" label="Leads" value="15" trend="25%" tone="orange" /></div>
-
-          <div className="dashboard-columns">
-            <div className="dashboard-left">
-              <div className="dash-card revenue-card"><div className="dash-card-heading"><div><h2>Revenue Overview</h2><p>Monthly earnings from completed projects</p></div><button>Last 6 months⌄</button></div><div className="chart-wrap"><div className="chart-y"><span>200K</span><span>150K</span><span>100K</span><span>50K</span><span>0</span></div><div className="line-chart"><div className="chart-gridlines" /><svg viewBox="0 0 600 175" preserveAspectRatio="none" role="img" aria-label="Revenue line chart"><path d="M0 150 C70 130, 100 135, 125 132 S200 132, 250 128 S325 105, 375 102 S450 62, 500 58 S555 40, 600 25 L600 175 L0 175 Z" fill="url(#area)" /><path d="M0 150 C70 130, 100 135, 125 132 S200 132, 250 128 S325 105, 375 102 S450 62, 500 58 S555 40, 600 25" fill="none" stroke="#1285ef" strokeWidth="2.5" /><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#74b9ff" stopOpacity=".35"/><stop offset="1" stopColor="#74b9ff" stopOpacity=".02"/></linearGradient></defs></svg><div className="chart-labels"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div></div></div></div>
-              <div className="dash-card projects-card"><div className="dash-card-heading"><h2>Recent Projects</h2><a href="#projects">View all →</a></div><div className="project-table"><div className="project-row project-header"><span>Project</span><span>Client</span><span>Status</span><span>Deadline</span><span /></div>{projects.map(([name, client, status, deadline, image]) => <div className="project-row" key={name}><div className="project-name"><Image src={image} alt="" width={30} height={30} /><span>{name}</span></div><span>{client}</span><span><em className={`status ${status.toLowerCase().replace(' ', '-')}`}>{status}</em></span><span>{deadline}</span><b>•••</b></div>)}</div></div>
+        <div className="index-hero-container">
+          <div className="index-hero-content">
+            <div className="index-hero-subtitle">
+              <span className="index-hero-line"></span>
+              WELCOME TO ZIMORA
             </div>
-            <div className="dashboard-middle"><div className="dash-card status-card"><div className="dash-card-heading"><h2>Project Status</h2><a href="#projects">View all →</a></div><div className="donut-area"><div className="donut"><div><strong>12</strong><span>Total Projects</span></div></div></div><ul className="legend"><li><i className="dot completed"/>Completed <b>7</b><span>58%</span></li><li><i className="dot progress"/>In Progress <b>3</b><span>25%</span></li><li><i className="dot hold"/>On Hold <b>1</b><span>8%</span></li><li><i className="dot planning"/>Planning <b>1</b><span>8%</span></li></ul></div><div className="dash-card clients-card"><div className="dash-card-heading"><h2>Top Clients</h2><a href="#clients">View all →</a></div>{['Zimora POS','Mukurinweini Technical','Electroplanet Ruiru','Lynn Caris Palette','JCM Church'].map((client, i) => <div className="client-row" key={client}><div className={`client-avatar c${i}`}>{client[0]}</div><div><strong>{client}</strong><span>{['Business Software','Educational Website','E-commerce Website','E-commerce Website','Corporate Website'][i]}</span></div><em>Active</em></div>)}</div></div>
-            <aside className="dashboard-right"><div className="dash-promo"><div><h2>Professional Web Solutions<br />for Kenyan Businesses</h2><p>Custom websites, e-commerce,<br />software & more.</p><button>View Our Services →</button></div><div className="laptop">Z</div></div><div className="dash-card quick-card"><h2>Quick Actions</h2><div className="quick-grid">{[['＋','Add New Project'],['♙','Add Client'],['▤','Create Invoice'],['◎','New Lead']].map(([icon, label]) => <button key={label}><span>{icon}</span>{label}</button>)}</div></div><div className="dash-card activity-card"><div className="dash-card-heading"><h2>Recent Activity</h2><a href="#activity">View all →</a></div>{['New lead from Electroplanet Ruiru','Invoice #INV-0245 paid','Project “Mukurinweini Technical Website” marked as completed','New client added','Blog post published'].map((item, i) => <div className="activity-row" key={item}><i className={`activity-icon a${i}`}>{['✦','▤','✓','♙','▣'][i]}</i><div><strong>{item}</strong><span>{['Website development inquiry','KSh 45,000 from Zimora POS','', 'Lynn Caris Palette','“5 Tips for a Successful Business Website”'][i]}</span><small>{['2 hours ago','4 hours ago','6 hours ago','8 hours ago','1 day ago'][i]}</small></div></div>)}</div></aside>
+            <h1 className="index-hero-title">
+              Elevate Your Business with<br />
+              <span className="text-primary">Smart Digital Solutions</span>
+            </h1>
+            <p className="index-hero-description">
+              Zimora Technologies helps startups and growing businesses build powerful websites, scalable applications and digital systems that drives real results.
+            </p>
+            <div className="index-hero-buttons">
+              <Link href="/services">
+                <button className="btn-primary">GET STARTED</button>
+              </Link>
+              <Link href="/contact">
+                <button className="btn-outline">REQUEST A QUOTE</button>
+              </Link>
+            </div>
           </div>
         </div>
-        <footer className="dashboard-footer"><span>© 2025 Zimora Tech. All rights reserved.</span><div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#support">Support</a></div></footer>
       </section>
-    </main>
+
+      {/* ABOUT */}
+      <section className="about">
+        <div className="about-container">
+          <Image 
+            src="https://img.freepik.com/free-photo/businesspeople-having-good-time-meeting_1098-1786.jpg?semt=ais_hybrid&w=740&q=80" 
+            alt="Zimora Technologies team collaborating on digital solutions project" 
+            width={740}
+            height={493}
+            loading="lazy" 
+          />
+          <div>
+            <h4>ABOUT ZIMORA</h4>
+            <h2>Customized Solutions to Meet Client Needs</h2>
+            <p>We help startups & enterprises scale through technology.</p>
+            <ul>
+              <li>✔ Cloud Solutions</li>
+              <li>✔ Secure Systems</li>
+              <li>✔ Business Growth</li>
+            </ul>
+            <Link href="/about">
+              <button className="btn-primary">Explore More</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="services page-transition">
+        <h2>Exclusive IT Services</h2>
+        <div className="service-grid">
+          <div className="service-card">
+            <i className="fa-solid fa-code"></i>
+            <h3>Web Development</h3>
+            <p>High-performance modern websites.</p>
+          </div>
+          <div className="service-card">
+            <i className="fa-solid fa-bullhorn"></i>
+            <h3>Digital Marketing</h3>
+            <p>SEO, branding & online growth.</p>
+          </div>
+          <div className="service-card">
+            <i className="fa-solid fa-rocket"></i>
+            <h3>Web Applications</h3>
+            <p>Custom web apps & solutions.</p>
+          </div>
+        </div>
+        <div className="services-button-container">
+          <Link href="/services">
+            <button className="btn-primary">View our services</button>
+          </Link>
+        </div>
+      </section>
+
+      {/* TRUSTED COMPANIES */}
+      <section className="trusted-companies">
+        <div className="trusted-header">
+          <h2>Trusted by Leading Companies</h2>
+          <p>We partner with industry leaders to deliver exceptional digital solutions</p>
+        </div>
+        <div className="carousel-container">
+          <div className="carousel-track">
+            <div className="logo-slide">
+              <Image src="https://upload.wikimedia.org/wikipedia/en/archive/8/8a/20210807000406%21Equity_Bank_Logo.png" alt="Equity Bank Kenya - Trusted financial partner" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://www.safaricom.co.ke/images/SAF-MAIN-LOGO.png" alt="Safaricom - Leading telecommunications provider in Kenya" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="/images/Zimora.png" alt="Zimora Technologies - Professional IT Solutions Company" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel Kenya - Mobile network operator" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://upload.wikimedia.org/wikipedia/en/d/de/KCB_Bank_Kenya_Limited_logo.png" alt="KCB Bank Kenya - Commercial banking services" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://zegetech.com/assets/images/logos/logo-sab.jpg" alt="Sab Foundation - Community organization" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            {/* Duplicate logos for seamless loop */}
+            <div className="logo-slide">
+              <Image src="https://upload.wikimedia.org/wikipedia/en/archive/8/8a/20210807000406%21Equity_Bank_Logo.png" alt="Equity Bank Kenya - Trusted financial partner" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://www.safaricom.co.ke/images/SAF-MAIN-LOGO.png" alt="Safaricom - Leading telecommunications provider in Kenya" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="/images/Zimora.png" alt="Zimora Technologies - Professional IT Solutions Company" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="/images/zetech logo.jpg" alt="Zetech University - Higher education institution" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQssS1GCHRoUD2F0-h4VhRQoPI0uyzwVitAgA&s" alt="Airtel Kenya - Mobile network operator" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://upload.wikimedia.org/wikipedia/en/d/de/KCB_Bank_Kenya_Limited_logo.png" alt="KCB Bank Kenya - Commercial banking services" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+            <div className="logo-slide">
+              <Image src="https://zegetech.com/assets/images/logos/logo-sab.jpg" alt="Sab Foundation - Community organization" className="company-logo" width={200} height={100} loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE ZIMORA TECHNOLOGIES */}
+      <section className="why-choose">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Why Choose Zimora Technologies</h2>
+            <p className="section-description">
+              We deliver exceptional digital solutions that drive business growth and success through innovation, expertise, and commitment to excellence.
+            </p>
+          </div>
+        </div>
+        
+        <div className="container">
+          <div className="why-choose-grid">
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className="fa-solid fa-handshake"></i>
+              </div>
+              <h3>Client-Focused Development Approach</h3>
+              <p>We prioritize your unique business needs and goals, ensuring every solution is tailored to deliver maximum value and achieve your specific objectives.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className="fa-solid fa-rocket"></i>
+              </div>
+              <h3>Modern and Scalable Technologies</h3>
+              <p>We leverage cutting-edge technologies and best practices to build solutions that grow with your business and adapt to future challenges.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className="fa-solid fa-paint-brush"></i>
+              </div>
+              <h3>Clean and User-Friendly Designs</h3>
+              <p>Our designs combine aesthetic appeal with intuitive functionality, creating engaging experiences that delight users and drive conversions.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className="fa-solid fa-headset"></i>
+              </div>
+              <h3>Transparent Communication</h3>
+              <p>We maintain open and honest communication throughout your project, keeping you informed and involved at every stage of development.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className="fa-solid fa-tools"></i>
+              </div>
+              <h3>Reliable Support and Maintenance</h3>
+              <p>Our commitment doesn't end at launch. We provide ongoing support and maintenance to ensure your digital solutions continue to perform optimally.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="why-choose-cta">
+          <Link href="/contact">
+            <button className="btn-primary">Start Your Project</button>
+          </Link>
+          <Link href="/about">
+            <button className="btn-outline">Learn More About Us</button>
+          </Link>
+        </div>
+      </section>
+
+      {/* RECENT BLOGS */}
+      <section className="recent-blogs">
+        <div className="container">
+          <div className="section-header">
+            <h2>Latest Insights & Articles</h2>
+            <p className="section-description">
+              Stay updated with the latest technology trends, expert insights, and innovative solutions from our team
+            </p>
+          </div>
+          
+          <div className="blogs-grid" id="recentBlogsGrid">
+            {recentBlogs.map((blog) => (
+              <article key={blog.id} className="blog-card">
+                <div className="blog-card-image">
+                  <Image src={blog.image} alt={blog.title} width="600" height="400" loading="lazy" />
+                </div>
+                <div className="blog-card-content">
+                  <div className="blog-card-meta">
+                    <span className="blog-card-category">{blog.category}</span>
+                    <span className="blog-card-date">{blog.date}</span>
+                  </div>
+                  <h3 className="blog-card-title">{blog.title}</h3>
+                  <p className="blog-card-description">{blog.description}</p>
+                  <Link href="/blog" className="blog-card-link">
+                    Read More <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+          
+          <div className="blogs-cta">
+            <Link href="/blog">
+              <button className="btn-primary">View All Articles</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <WhatsAppButton />
+      <SiteFooter />
+      <Chatbot />
+    </>
   );
 }
