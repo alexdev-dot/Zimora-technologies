@@ -1,9 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { BarChart3, BriefcaseBusiness, ChartNoAxesCombined, FileText, LayoutDashboard, ReceiptText, Send, Users, type LucideIcon } from 'lucide-react';
 
-const navItems = [
-  ['⌂', 'Dashboard', '/dashboard'], ['▣', 'Projects', '/projects'], ['♧', 'Clients', '/clients'], ['⌘', 'Services', '/services'],
-  ['⌁', 'Leads', '/leads'], ['▤', 'Invoices', '/invoices'], ['▧', 'Blogs', '/blog'], ['▥', 'Reports', '/reports'],
+const navItems: [LucideIcon, string, string][] = [
+  [LayoutDashboard, 'Dashboard', '/dashboard'],
+  [BriefcaseBusiness, 'Projects', '/projects'],
+  [Users, 'Clients', '/clients'],
+  [ChartNoAxesCombined, 'Services', '/services'],
+  [Send, 'Leads', '/leads'],
+  [ReceiptText, 'Invoices', '/invoices'],
+  [FileText, 'Blogs', '/blog'],
+  [BarChart3, 'Reports', '/reports'],
 ];
 
 export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
@@ -11,10 +18,8 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
     <aside className={`dashboard-sidebar${collapsed ? ' collapsed' : ''}`}>
       <div className="dash-brand-row"><Link className="dash-brand" href="/dashboard" aria-label="Zimora Technologies dashboard"><Image className="dash-brand-logo" src="/images/Zimora.png" alt="Zimora Technologies" width={172} height={88} priority /></Link></div>
       <nav className="dash-nav" aria-label="Main navigation">
-        {navItems.map(([icon, label, href]) => <Link key={label} className={label === 'Dashboard' ? 'active' : ''} href={href}><span>{icon}</span>{label}</Link>)}
+        {navItems.map(([Icon, label, href]) => <Link key={label} className={label === 'Dashboard' ? 'active' : ''} href={href}><Icon aria-hidden="true" /><span>{label}</span></Link>)}
       </nav>
-      <p className="dash-section-label">SETTINGS</p>
-      <nav className="dash-nav dash-settings"><button><span>♙</span>Team</button><button><span>⚙</span>Settings</button></nav>
     </aside>
   );
 }
