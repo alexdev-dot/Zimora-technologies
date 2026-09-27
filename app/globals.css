@@ -14,10 +14,62 @@
   padding-right: 8px !important;
 }
 
-.dashboard-sidebar .dash-brand-row {
-  padding-left: 4px !important;
-  padding-right: 4px !important;
+/* Final admin responsive layout pass */
+.dashboard-content{min-width:0;flex:1;width:calc(100% - 220px)}
+.dashboard-header{min-width:0;display:flex;align-items:center;gap:12px}
+.dashboard-main{min-width:0;overflow-x:hidden}
+.project-table,.chart-wrap,.dash-card{min-width:0}
+
+@media (max-width: 768px){
+  .dashboard-content{width:100%;}
+  .dashboard-header{position:sticky;top:0;z-index:900;padding:0 14px;min-height:58px}
+  .dashboard-main{width:100%;padding:18px 14px 28px}
+  .dashboard-heading{gap:14px}
+  .dashboard-heading h1{font-size:clamp(24px,7vw,30px);overflow-wrap:anywhere}
+  .dashboard-heading>div>span{display:block;max-width:100%;line-height:1.5}
+  .dash-card-heading{gap:12px;flex-wrap:wrap}
+  .dash-card-heading h2{font-size:16px}
+  .dash-card-heading a,.dash-card-heading button{white-space:nowrap}
+  .project-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .project-row{min-width:520px}
+  .chart-wrap{overflow:hidden}
+  .chart-y{flex:0 0 32px}
+  .line-chart{min-width:0}
+  .modal-overlay{padding:12px}
+  .modal-content{max-height:calc(100dvh - 24px);border-radius:12px}
+  .modal-header{padding:16px}
+  .modal-body{padding:16px}
+  .modal-footer{padding:16px;flex-wrap:wrap}
+  .modal-footer>*{flex:1 1 120px}
+  .dashboard-footer{flex-wrap:wrap}
 }
+
+@media (max-width: 480px){
+  .dashboard-header{gap:8px;padding:0 10px}
+  .dash-search{flex:1;min-width:0;max-width:none}
+  .dash-search input{width:100%;font-size:13px}
+  .dash-header-actions{margin-left:auto;gap:5px}
+  .dash-profile-copy{display:none}
+  .dashboard-main{padding:16px 12px 24px}
+  .dashboard-heading h1{font-size:24px}
+  .dash-stat-card{min-width:0;padding:12px}
+  .dash-stat-card .stat-content{min-width:0}
+  .dash-muted,.trend-label{white-space:normal}
+  .quick-actions-bottom .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quick-actions-bottom .quick-grid button{min-width:0;overflow-wrap:anywhere}
+  .projects-header{gap:12px}
+  .projects-header .btn-primary{width:100%;justify-content:center}
+  .search-input,.filter-select{width:100%;min-width:0}
+  .view-actions{width:100%}
+  .view-actions .view-btn{flex:1}
+}
+
+@media (max-width: 360px){
+  .quick-actions-bottom .quick-grid{grid-template-columns:1fr}
+  .dash-card{padding:12px}
+  .dashboard-main{padding-inline:10px}
+}
+
 
 .dashboard-sidebar .dash-nav {
   margin-left: 0 !important;
@@ -4314,7 +4366,53 @@ nav a.active {
     text-align: center;
   }
   
-  .about-container h4 {
+/* Final responsive admin layout overrides */
+.dashboard-content{min-width:0;flex:1;width:calc(100% - 220px)}
+.dashboard-main{min-width:0;overflow-x:hidden}
+
+@media (max-width:768px){
+  .dashboard-content{width:100%}
+  .dashboard-header{position:sticky;top:0;z-index:900;min-height:58px;height:auto;padding:10px 14px;gap:8px}
+  .dashboard-main{width:100%;padding:18px 14px 28px}
+  .dashboard-heading{display:block;margin-bottom:18px}
+  .dashboard-heading h1{font-size:clamp(24px,7vw,30px);overflow-wrap:anywhere}
+  .dashboard-heading>div>span{display:block;line-height:1.5}
+  .dash-card-heading{flex-wrap:wrap;gap:10px}
+  .project-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .project-row{min-width:520px}
+  .chart-wrap{overflow:hidden}
+  .modal-overlay{padding:12px}
+  .modal-content{max-height:calc(100dvh - 24px);border-radius:12px}
+  .modal-header,.modal-body,.modal-footer{padding:16px}
+  .modal-footer{flex-wrap:wrap}
+  .modal-footer>*{flex:1 1 120px}
+  .projects-header{align-items:stretch}
+  .projects-header .btn-primary{width:100%;justify-content:center}
+  .search-input,.filter-select{width:100%;min-width:0}
+  .view-actions{width:100%}
+  .view-actions .view-btn{flex:1}
+}
+
+@media (max-width:480px){
+  .dashboard-header{padding:9px 10px}
+  .dash-search{flex:1;min-width:0;max-width:none}
+  .dash-search input{font-size:13px}
+  .dash-header-actions{gap:5px;margin-left:auto}
+  .dash-profile-copy{display:none}
+  .dashboard-main{padding:16px 12px 24px}
+  .dash-stat-card{min-width:0;padding:12px}
+  .quick-actions-bottom .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quick-actions-bottom .quick-grid button{min-width:0;overflow-wrap:anywhere}
+  .projects-grid{grid-template-columns:1fr}
+  .list-header,.list-row{min-width:680px}
+}
+
+@media (max-width:360px){
+  .quick-actions-bottom .quick-grid{grid-template-columns:1fr}
+  .dashboard-main{padding-inline:10px}
+}
+
+.about-container h4 {
     text-align: center;
   }
   
