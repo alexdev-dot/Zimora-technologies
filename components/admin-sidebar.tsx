@@ -5,15 +5,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { BarChart3, BriefcaseBusiness, ChartNoAxesCombined, FileText, LayoutDashboard, ReceiptText, Send, Users, type LucideIcon } from 'lucide-react';
 
-const navItems: [LucideIcon, string, string][] = [
-  [LayoutDashboard, 'Dashboard', '/dashboard'],
-  [BriefcaseBusiness, 'Projects', '/projects'],
-  [Users, 'Clients', '/clients'],
-  [ChartNoAxesCombined, 'Services', '/services'],
-  [Send, 'Leads', '/leads'],
-  [ReceiptText, 'Invoices', '/invoices'],
-  [FileText, 'Blogs', '/blog'],
-  [BarChart3, 'Reports', '/reports'],
+const navGroups: { label: string; items: [LucideIcon, string, string][] }[] = [
+  { label: 'Overview', items: [[LayoutDashboard, 'Dashboard', '/dashboard']] },
+  { label: 'Workspace', items: [[BriefcaseBusiness, 'Projects', '/projects'], [Users, 'Clients', '/clients'], [ChartNoAxesCombined, 'Services', '/services'], [Send, 'Leads', '/leads']] },
+  { label: 'Business', items: [[ReceiptText, 'Invoices', '/invoices'], [BarChart3, 'Reports', '/reports']] },
+  { label: 'Content', items: [[FileText, 'Blog', '/blog']] },
 ];
 
 export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
@@ -27,11 +23,19 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
         </Link>
       </div>
       <nav className="dash-nav" aria-label="Main navigation">
-        {navItems.map(([Icon, label, href]) => {
-          const active = href === '/dashboard' ? pathname === href : pathname.startsWith(href);
-          return <Link key={label} title={collapsed ? label : undefined} className={active ? 'active' : ''} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
-        })}
+        {navGroups.map((group) => <div className="dash-nav-group" key={group.label}>
+          <span className="dash-nav-label">{group.label}</span>
+          {group.items.map(([Icon, label, href]) => {
+            const active = href === '/dashboard' ? pathname === href : pathname.startsWith(href);
+            return <Link key={label} title={collapsed ? label : undefined} className={active ? 'active' : ''} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
+          })}
+        </div>)}
       </nav>
+      <div className="dash-account">
+        <Image className="dash-account-avatar" src="/images/CEO.png" alt="Alex Kariuki" width={36} height={36} />
+        <div className="dash-account-copy"><strong>Alex Kariuki</strong><span>Administrator</span></div>
+        <span className="dash-account-more" aria-hidden="true">•••</span>
+      </div>
     </aside>
   );
 }
