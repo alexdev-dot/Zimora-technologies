@@ -15,7 +15,6 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
       </nav>
       <p className="dash-section-label">SETTINGS</p>
       <nav className="dash-nav dash-settings"><button><span>♙</span>Team</button><button><span>⚙</span>Settings</button></nav>
-      <div className="dash-sidebar-promo"><div className="promo-art">⌁</div><strong>Let&apos;s build something great together!</strong><p>Turn your ideas into powerful digital solutions.</p><button>Get in Touch →</button></div>
     </aside>
   );
 }
