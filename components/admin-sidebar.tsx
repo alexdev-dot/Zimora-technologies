@@ -32,10 +32,6 @@ export function AdminSidebar({ collapsed, onToggle }: { collapsed: boolean; onTo
           return <Link key={label} title={collapsed ? label : undefined} className={active ? 'active' : ''} href={href} aria-current={active ? 'page' : undefined}><Icon aria-hidden="true" /><span>{label}</span></Link>;
         })}
       </nav>
-      <div className="dash-sidebar-footer">
-        <span className="dash-sidebar-footer-dot" aria-hidden="true" />
-        <span>Admin workspace</span>
-      </div>
     </aside>
   );
 }
