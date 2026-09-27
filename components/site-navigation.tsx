@@ -28,6 +28,30 @@ export default function SiteNavigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const nav = document.getElementById('nav');
+      const menuButton = event.target as HTMLElement;
+      
+      if (isMenuOpen && nav && !nav.contains(event.target as Node) && !menuButton.classList.contains('menu')) {
+        closeMenu();
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Us' },
@@ -88,11 +112,11 @@ export default function SiteNavigation() {
           </div>
           <nav id="nav" className={isMenuOpen ? 'active' : ''}>
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
+              <Link key={link.href} href={link.href} onClick={closeMenu}>
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="nav-quote-btn">
+            <Link href="/contact" className="nav-quote-btn" onClick={closeMenu}>
               Get a Quote
             </Link>
           </nav>
@@ -103,6 +127,7 @@ export default function SiteNavigation() {
           ></i>
         </div>
       </header>
+      {isMenuOpen && <div className="menu-overlay active" onClick={closeMenu} aria-hidden="true"></div>}
     </>
   );
 }

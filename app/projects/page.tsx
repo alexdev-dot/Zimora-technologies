@@ -43,7 +43,7 @@ export default function ProjectsPage() {
       category: 'web',
       title: 'Groomers Barber Spa',
       description: 'Groomers is a modern barber shop website that allows customers to book appointments, view services and prices.',
-      image: 'project-images/Groomers.png',
+      image: '/project-images/Groomers.png',
       status: 'completed',
       tech: ['React', 'Node.js', 'MongoDB'],
       link: 'https://alexdev-dot.github.io/Groomers/'
@@ -53,7 +53,7 @@ export default function ProjectsPage() {
       category: 'real-estate',
       title: 'Horizon Real Estate',
       description: 'Horizon Real Estate is a comprehensive real estate platform that allows users to search for properties, view details and connect with agents.',
-      image: 'project-images/Horizon Estate.png',
+      image: '/project-images/Horizon Estate.png',
       status: 'in-development',
       tech: ['vite & typescript', 'chart.js', 'React', 'PostgreSQL'],
       link: '#'
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
       category: 'ecommerce',
       title: 'ShopEase Kenya Store',
       description: 'Simple and effective e-commerce store for selling products online with Mpesa integration for seamless payments.',
-      image: 'project-images/ShopEaseKenya.png',
+      image: '/project-images/ShopEaseKenya.png',
       status: 'completed',
       tech: ['HTML', 'Mpesa Integration', 'JavaScript', 'CSS3'],
       link: 'https://alexdev-dot.github.io/ShopEase-Kenya/'
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
       category: 'web',
       title: 'Zetech Event Management system',
       description: 'Zetech events system is a centralized system where all events are shown for Zetech university students.',
-      image: 'project-images/Zetech-event system.png',
+      image: '/project-images/Zetech-event system.png',
       status: 'in-development',
       tech: ['React.js', 'Prisma', 'PostgreSQL', 'AWS'],
       link: '#'
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
       category: 'web',
       title: 'Bite Flow Kenya',
       description: 'Bite Flow Kenya is a food delivery platform that connects customers with local restaurants and food vendors.',
-      image: 'project-images/Bite Flow.png',
+      image: '/project-images/Bite Flow.png',
       status: 'in-development',
       tech: ['React.js', 'Node js', 'Mpesa integration', 'MySQl'],
       link: '#'
@@ -93,7 +93,7 @@ export default function ProjectsPage() {
       category: 'ecommerce',
       title: 'Omnishop',
       description: 'Omnishop is an e-commerce platform that allows users to buy and sell products online. It is integrated with Mpesa for seamless payments.',
-      image: 'project-images/Omnishop.png',
+      image: '/project-images/Omnishop.png',
       status: 'in-development',
       tech: ['MongoDB', 'Mpesa Integration', 'React', 'Typescript'],
       link: '#'
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
       category: 'real-estate',
       title: 'Haven Homes',
       description: 'Haven Homes is a real estate platform that allows users to search for properties, view details and connect with agents.',
-      image: 'project-images/Haven Homes.png',
+      image: '/project-images/Haven Homes.png',
       status: 'in-development',
       tech: ['vite & typescript', 'chart.js', 'React', 'PostgreSQL'],
       link: 'https://haven-homes-mu.vercel.app/'

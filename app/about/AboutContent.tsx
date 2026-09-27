@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import SiteNavigation from '@/components/site-navigation';
 import SiteFooter from '@/components/site-footer';
 import Chatbot from '@/components/chatbot';
@@ -9,97 +8,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function AboutContent() {
-  const [stats, setStats] = useState({
-    clients: 0,
-    projects: 0,
-    years: 0,
-    support: 24,
-  });
-  const [animated, setAnimated] = useState(false);
-  const statsRef = useRef<HTMLDivElement>(null);
-
-  // Calculate years of experience from January 2026
-  const calculateYearsOfExperience = () => {
-    const startDate = new Date('2026-01-01');
-    const currentDate = new Date();
-    let years = currentDate.getFullYear() - startDate.getFullYear();
-    const monthDiff = currentDate.getMonth() - startDate.getMonth();
-    
-    if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < startDate.getDate())) {
-      years--;
-    }
-    
-    return Math.max(0, years);
-  };
-
-  // Animate counter
-  const animateCounter = (target: number, duration: number = 2000) => {
-    const increment = target / (duration / 10);
-    let count = 0;
-    
-    const timer = setInterval(() => {
-      count += increment;
-      if (count >= target) {
-        clearInterval(timer);
-        return target;
-      }
-      return Math.ceil(count);
-    }, 10);
-    
-    return timer;
-  };
-
-  useEffect(() => {
-    const years = calculateYearsOfExperience();
-    setStats((prev) => ({ ...prev, years }));
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !animated) {
-            setAnimated(true);
-            
-            // Animate stats
-            const animateStats = async () => {
-              const years = calculateYearsOfExperience();
-              const targets = {
-                clients: 50,
-                projects: 10,
-                years: years,
-                support: 24,
-              };
-
-              for (const [key, target] of Object.entries(targets)) {
-                let count = 0;
-                const increment = target / 100;
-                const timer = setInterval(() => {
-                  count += increment;
-                  if (count >= target) {
-                    clearInterval(timer);
-                    setStats((prev) => ({ ...prev, [key]: target }));
-                  } else {
-                    setStats((prev) => ({ ...prev, [key]: Math.ceil(count) }));
-                  }
-                }, 20);
-              }
-            };
-
-            animateStats();
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [animated]);
 
   return (
     <>
@@ -123,31 +31,6 @@ export default function AboutContent() {
             <p className="about-hero-description">
               We are a passionate team of innovators dedicated to helping businesses thrive in the digital age through cutting-edge technology solutions and exceptional service.
             </p>
-            
-            {/* STATS SECTION INSIDE HERO */}
-            <div className="stats-section" ref={statsRef}>
-              <div className="stats-grid">
-                <div className="stat-item">
-                  <div className="stat-number">{stats.clients}+</div>
-                  <div className="stat-label">Happy Clients</div>
-                </div>
-                
-                <div className="stat-item">
-                  <div className="stat-number">{stats.projects}+</div>
-                  <div className="stat-label">Delivered Projects</div>
-                </div>
-                
-                <div className="stat-item">
-                  <div className="stat-number">{stats.years}+</div>
-                  <div className="stat-label">Years of Experience</div>
-                </div>
-                
-                <div className="stat-item">
-                  <div className="stat-number">{stats.support}</div>
-                  <div className="stat-label">Support 24/7</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

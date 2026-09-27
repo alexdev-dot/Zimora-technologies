@@ -43,7 +43,7 @@ export default function CookieConsent() {
     setShowBanner(false);
   };
 
-  if (pathname.startsWith('/dashboard') || !showBanner || consentGiven) {
+  if (pathname.startsWith('/dashboard') || pathname.startsWith('/admin') || !showBanner || consentGiven) {
   return null;
   }
 
@@ -107,15 +107,11 @@ export default function CookieConsent() {
           align-items: center;
           justify-content: center;
           opacity: 0.6;
-          transition: all 0.2s ease;
           border-radius: 4px;
           z-index: 10;
         }
 
-        .cookie-close-btn:hover {
-          opacity: 1;
-          background: rgba(255, 255, 255, 0.1);
-        }
+
 
         .cookie-consent-content {
           display: flex;
@@ -151,13 +147,9 @@ export default function CookieConsent() {
           text-decoration: none;
           font-size: 14px;
           font-weight: 500;
-          transition: color 0.3s ease;
         }
 
-        .cookie-consent-link:hover {
-          color: #ff6b33;
-          text-decoration: underline;
-        }
+
 
         .cookie-consent-buttons {
           display: flex;
@@ -172,7 +164,6 @@ export default function CookieConsent() {
           font-size: 12px;
           font-weight: 600;
           cursor: pointer;
-          transition: all 0.2s ease;
           white-space: nowrap;
         }
 
@@ -182,9 +173,7 @@ export default function CookieConsent() {
           border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .cookie-btn-reject:hover {
-          background: rgba(255, 255, 255, 0.2);
-        }
+
 
         .cookie-btn-accept {
           background: #ff4d00;
@@ -192,10 +181,7 @@ export default function CookieConsent() {
           border: 1px solid #ff4d00;
         }
 
-        .cookie-btn-accept:hover {
-          background: #ff6b33;
-          border-color: #ff6b33;
-        }
+
 
         @media (max-width: 768px) {
           .cookie-consent-banner {
