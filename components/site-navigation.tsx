@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { socialLinks } from '@/lib/social-links';
 
 export default function SiteNavigation() {
   const [currentTime, setCurrentTime] = useState('');
@@ -37,7 +38,7 @@ export default function SiteNavigation() {
     const handleClickOutside = (event: MouseEvent) => {
       const nav = document.getElementById('nav');
       const menuButton = event.target as HTMLElement;
-      
+
       if (isMenuOpen && nav && !nav.contains(event.target as Node) && !menuButton.classList.contains('menu')) {
         closeMenu();
       }
@@ -59,15 +60,6 @@ export default function SiteNavigation() {
     { href: '/projects', label: 'Our Projects' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
-  ];
-
-  const socialLinks = [
-    { href: 'https://facebook.com/zimoratechnologies', icon: 'fa-facebook-f', label: 'Facebook' },
-    { href: 'https://twitter.com/ZimoraTech', icon: 'fa-square-x-twitter', label: 'X' },
-    { href: 'https://linkedin.com/company/zimoratechnologies', icon: 'fa-linkedin-in', label: 'LinkedIn' },
-    { href: 'https://instagram.com/zimoratechnologies', icon: 'fa-instagram', label: 'Instagram' },
-    { href: 'https://tiktok.com/@zimoratechnologies', icon: 'fa-tiktok', label: 'TikTok' },
-    { href: 'https://youtube.com/@zimoratechnologies', icon: 'fa-youtube', label: 'YouTube' },
   ];
 
   return (

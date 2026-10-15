@@ -322,20 +322,17 @@ export default function ContactPage() {
               <div className="contact-social">
                 <h3>Follow Us</h3>
                 <div className="contact-social-links">
-                  <a href="https://facebook.com/zimoratechnologies" className="social-link" target="_blank" rel="noopener">
+                  <a href="https://www.facebook.com/zimoratechnologies" className="social-link" target="_blank" rel="noopener">
                     <i className="fa-brands fa-facebook-f"></i>
                   </a>
-                  <a href="https://twitter.com/ZimoraTech" className="social-link" target="_blank" rel="noopener">
-                    <i className="fa-brands fa-square-x-twitter"></i>
-                  </a>
-                  <a href="https://linkedin.com/company/zimoratechnologies" className="social-link" target="_blank" rel="noopener">
+                  <a href="https://www.linkedin.com/in/alex-kariuki-751a30345" className="social-link" target="_blank" rel="noopener">
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
-                  <a href="https://instagram.com/zimoratechnologies" className="social-link" target="_blank" rel="noopener">
+                  <a href="https://www.instagram.com/alexdevs.dot" className="social-link" target="_blank" rel="noopener">
                     <i className="fa-brands fa-instagram"></i>
                   </a>
-                  <a href="https://youtube.com/@zimoratechnologies" className="social-link" target="_blank" rel="noopener">
-                    <i className="fa-brands fa-youtube"></i>
+                  <a href="https://www.tiktok.com/@alexdevs.dot" className="social-link" target="_blank" rel="noopener">
+                    <i className="fa-brands fa-tiktok"></i>
                   </a>
                 </div>
               </div>

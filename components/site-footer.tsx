@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { socialLinks } from '@/lib/social-links';
 
 export default function SiteFooter() {
   const [email, setEmail] = useState('');
@@ -29,14 +30,6 @@ export default function SiteFooter() {
     { href: '/services', label: 'Digital Marketing' },
     { href: '/services', label: 'Custom Solutions' },
     { href: '/services', label: 'Consulting' },
-  ];
-
-  const socialLinks = [
-    { href: 'https://facebook.com/zimoratechnologies', icon: 'fa-facebook-f', label: 'Facebook' },
-    { href: 'https://twitter.com/ZimoraTech', icon: 'fa-square-x-twitter', label: 'X' },
-    { href: 'https://linkedin.com/company/zimoratechnologies', icon: 'fa-linkedin-in', label: 'LinkedIn' },
-    { href: 'https://instagram.com/zimoratechnologies', icon: 'fa-instagram', label: 'Instagram' },
-    { href: 'https://youtube.com/@zimoratechnologies', icon: 'fa-youtube', label: 'YouTube' },
   ];
 
   return (

@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     title: 'Zimora Technologies | Professional IT Solutions & Web Development Services',
     description: 'Zimora Technologies offers professional IT solutions, web development, digital marketing, and cybersecurity services. Transform your business with our expert technology solutions.',
     images: ['https://zimoratech.co.ke/images/twitter-card.jpg'],
-    site: '@ZimoraTech',
   },
   verification: {
     google: 'bhpFKnuQK3tUPORrm8uBc0r1OHRW7y8NU5nJI6-ZyeM',
@@ -75,6 +74,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
         
+        {/* Social Media Profile Links for SEO */}
+        <link rel="me" href="https://www.facebook.com/zimoratechnologies" />
+        <link rel="me" href="https://www.linkedin.com/in/alex-kariuki-751a30345" />
+        <link rel="me" href="https://www.instagram.com/alexdevs.dot" />
+        <link rel="me" href="https://www.tiktok.com/@alexdevs.dot" />
+        
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -109,11 +114,18 @@ export default function RootLayout({
               "priceRange": "$$",
               "paymentAccepted": "Cash, Credit Card, M-Pesa",
               "sameAs": [
-                "https://facebook.com/zimoratechnologies",
-                "https://twitter.com/ZimoraTech",
-                "https://linkedin.com/company/zimoratechnologies",
-                "https://instagram.com/zimoratechnologies"
+                "https://www.facebook.com/zimoratechnologies"
               ],
+              "founder": {
+                "@type": "Person",
+                "name": "Alex Kariuki",
+                "url": "https://www.linkedin.com/in/alex-kariuki-751a30345",
+                "sameAs": [
+                  "https://www.linkedin.com/in/alex-kariuki-751a30345",
+                  "https://www.instagram.com/alexdevs.dot",
+                  "https://www.tiktok.com/@alexdevs.dot"
+                ]
+              },
               "services": [
                 "Web Development",
                 "Digital Marketing",
@@ -151,11 +163,18 @@ export default function RootLayout({
                 "addressCountry": "KE"
               },
               "sameAs": [
-                "https://facebook.com/zimoratechnologies",
-                "https://twitter.com/ZimoraTech",
-                "https://linkedin.com/company/zimoratechnologies",
-                "https://instagram.com/zimoratechnologies"
-              ]
+                "https://www.facebook.com/zimoratechnologies"
+              ],
+              "founder": {
+                "@type": "Person",
+                "name": "Alex Kariuki",
+                "url": "https://www.linkedin.com/in/alex-kariuki-751a30345",
+                "sameAs": [
+                  "https://www.linkedin.com/in/alex-kariuki-751a30345",
+                  "https://www.instagram.com/alexdevs.dot",
+                  "https://www.tiktok.com/@alexdevs.dot"
+                ]
+              }
             })
           }}
         />
